@@ -88,9 +88,9 @@ This coding style is based on the following guidelines:
 
 ## General
 
-- **never** abbreviate, unless it’s math.
+- ❌ **never** abbreviate, unless it’s math.
 - favor clarity of understanding instead of chopping off a few letters.
-- **always** declare the level modifiers.
+- ✅ **always** declare the level modifiers.
 
 ```csharp
 public class SchoolGeography
