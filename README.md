@@ -1,3 +1,9 @@
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
 # C# Style Guide
 
 This coding style is based on the following guidelines:
@@ -9,6 +15,8 @@ This coding style is based on the following guidelines:
 - [O’Reilly](https://www.oreilly.com/library/view/java-pocket-guide/9781491938683/ch01.html)
 
 ---
+
+<r>NewT</r>
 
 # Index
 
