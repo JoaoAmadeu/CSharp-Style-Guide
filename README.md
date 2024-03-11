@@ -12,17 +12,11 @@ This coding style is based on the following guidelines:
 
 # Index
 
-[Namoo](#Naming)
+[Naming](#Naming)
 
-(#Naming)
+[General](#General)
 
-[#Naming]
-
-<#Naming>
-
-[General](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-[Symbols](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Symbols](#Symbols)
 
 [Acronyms](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
 
@@ -90,7 +84,7 @@ This coding style is based on the following guidelines:
 
 # Naming
 
-## [General](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## General
 
 - **never** abbreviate, unless it’s math.
 - favor clarity of understanding instead of chopping off a few letters.
@@ -116,7 +110,7 @@ public void PgDn () {}
 
 ---
 
-## [Symbols](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## Symbols
 
 - **always** use only letters.
 - **never** use underscores `_`, dashes `-` or numbers `123`.
@@ -146,7 +140,7 @@ public string johnMaryAndSusan;
 
 ---
 
-## [Acronyms](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## Acronyms
 
 - **always** capitalize only the first letter and only when it’s appropriate:
 
