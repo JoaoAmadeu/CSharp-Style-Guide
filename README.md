@@ -10,7 +10,7 @@ This coding style is based on the following guidelines:
 
 ---
 
-<font color='red'>test blue color font</font>
+<span style="color:blue">some *This is Blue italic.* text</span>
 
 # Index
 
