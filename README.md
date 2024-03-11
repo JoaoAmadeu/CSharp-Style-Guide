@@ -10,7 +10,13 @@ This coding style is based on the following guidelines:
 
 ---
 
-<span style="color:blue">some *This is Blue italic.* text</span>
+<style
+  type="text/css">
+h1 {color:red;}
+
+p {color:blue;}
+</style>
+okay
 
 # Index
 
