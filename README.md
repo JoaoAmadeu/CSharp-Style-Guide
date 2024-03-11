@@ -10,8 +10,7 @@ This coding style is based on the following guidelines:
 
 ---
 
-<style>p{color:red;}</style>
-*foo*
+<style>aaa</style>
 
 # Index
 
