@@ -10,13 +10,8 @@ This coding style is based on the following guidelines:
 
 ---
 
-<style
-  type="text/css">
-h1 {color:red;}
-
-p {color:blue;}
-</style>
-okay
+<style>p{color:red;}</style>
+*foo*
 
 # Index
 
