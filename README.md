@@ -12,7 +12,7 @@ This coding style is based on the following guidelines:
 
 # Index
 
-[Naming](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Namoo](#Naming)
 
 [General](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
 
@@ -82,7 +82,7 @@ This coding style is based on the following guidelines:
 
 ---
 
-# [Naming](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+# Naming
 
 ## [General](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
 
