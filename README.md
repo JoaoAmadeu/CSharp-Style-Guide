@@ -16,7 +16,7 @@ p {color:blue;}
 </style>
 <p>okay</p>
 
-<div>aaa</div>
+<div style="color:blue">aaa</div>
 
 # Index
 
