@@ -1,9 +1,3 @@
-<style>
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-</style>
-
 # C# Style Guide
 
 This coding style is based on the following guidelines:
@@ -16,7 +10,7 @@ This coding style is based on the following guidelines:
 
 ---
 
-<r>NewT</r>
+<font color='red'>test blue color font</font>
 
 # Index
 
