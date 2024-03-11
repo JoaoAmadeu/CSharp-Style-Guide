@@ -9,10 +9,9 @@ This coding style is based on the following guidelines:
 - [O’Reilly](https://www.oreilly.com/library/view/java-pocket-guide/9781491938683/ch01.html)
 
 ---
-<style type="text/css">
-h1 {color:red;}
 
-p {color:blue;}
+<style >
+kpkp
 </style>
 <p>okay</p>
 
