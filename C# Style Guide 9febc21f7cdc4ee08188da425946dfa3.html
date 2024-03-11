@@ -1,0 +1,994 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>C# Style Guide</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9febc21f-7cdc-4ee0-8188-da425946dfa3" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/command-line_purple.svg"/></div><h1 class="page-title">C# Style Guide</h1><p class="page-description"></p></header><div class="page-body"><p id="a27b65df-7ea2-415f-83b4-2b95a4135432" class="">This coding style is based on the following guidelines:</p><ul id="d13b55f1-cea1-4aac-9d0a-994fddebe82f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://unity.com/how-to/naming-and-code-style-tips-c-scripting-unity">Unity</a></li></ul><ul id="4cda47cb-23b8-47eb-a8b4-7160314eab01" class="bulleted-list"><li style="list-style-type:disc"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions#style-guidelines">Microsoft</a></li></ul><ul id="8d0ac1e1-99aa-4c91-9a89-3901c9f18e18" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/dotnet/runtime/blob/main/docs/coding-guidelines/coding-style.md">Dotnet</a></li></ul><ul id="73e3ff28-e90d-4117-a854-31a9e1aaf6d7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://google.github.io/styleguide/csharp-style.html">Google</a></li></ul><ul id="ad5675f5-4547-4af0-95e9-6af0b3f81266" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.oreilly.com/library/view/java-pocket-guide/9781491938683/ch01.html">O’Reilly</a></li></ul><hr id="c796dfbf-fa89-4670-aab8-d97b0398fa47"/><h1 id="da2c0925-6ffc-4ede-93cb-5e4a4b0912cd" class="">Index</h1><div id="ba068360-4e8a-4d57-b33e-eb202b0a2f4b" class="column-list"><div id="68dbf75e-5ee1-41b4-9b96-b2fb80c3abc3" style="width:33.33333333333333%" class="column"><p id="d4f214e0-ef0e-456d-ba39-87c3c1b29d72" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Naming</a><div class="indented"><p id="ab2543d3-9884-48bb-ac88-e976daf38022" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">General</a></p><p id="438d7a11-e10a-4b04-82f2-d466a5879edf" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Symbols</a></p><p id="115e1f40-38af-4c7a-8c17-ed8b568b2ec0" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Acronyms</a></p><p id="c19e2c2a-d3d5-4483-b9f9-5e36ff4f02b0" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Namespace</a></p><p id="cc8d1dcc-a2e4-41d5-856f-2f2176abe83f" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Class</a></p><p id="c653c047-7c4c-42a2-8237-7ffe04866da9" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Struct</a></p><p id="d541a1e0-3428-48f9-8d2b-ff641fe90bad" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Interface</a></p><p id="4230955f-2a10-4215-a50c-09085e0a3048" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Enum</a></p><p id="fac2b0bb-2578-4162-93ce-e193dd40e8e2" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Field</a></p><p id="ab8f9fee-2c38-4c10-bef6-c2cb9a7d2b1c" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Property</a></p><p id="f0fa2965-7eb7-4248-a688-82aa7a2d88d2" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Method</a></p><p id="9cf99f8a-8350-4385-a95f-f03c7b275303" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Local variable</a></p><p id="556763ad-842b-4dd5-a365-c9bc85124973" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Parameters</a></p><p id="1a51c719-36fb-4f86-9566-5435c20bcc37" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Event</a></p><p id="dbb05768-70d1-4081-bf7d-d15e3422e821" class="">
+</p></div></p></div><div id="37fc7399-09a5-4695-9e37-81cb9fafc278" style="width:33.33333333333333%" class="column"><p id="c6a11484-2818-40f3-94ba-9d16eb421727" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Braces</a><div class="indented"><p id="d472c389-89a3-4c84-823b-0f044e4c564d" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">General</a></p><p id="ff6e8097-03d9-43c8-ab3a-825362f91514" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Property</a></p><p id="fc7bbf19-3e15-4847-91e0-83cdfdaed783" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Method</a></p><p id="8daa14f0-ed31-448d-94cb-94e7fe63eb81" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Condition</a></p><p id="45956234-4baa-4634-a02b-ff1b76ed85dd" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Switch</a></p><p id="542821cf-a42d-493e-a457-c3dc559feaa3" class="">
+</p></div></p></div><div id="2f69df07-3ef5-4ebc-99af-7a8d9b19b2f6" style="width:33.33333333333333%" class="column"><p id="b9f3e742-5660-4e66-91ba-56c5323b8fc3" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Practices</a><div class="indented"><p id="049bcf41-0754-4510-ae41-548205f8f429" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Parameters</a></p><p id="5c934b59-275a-4c67-b760-adf8f83342d4" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Enum</a></p><p id="7b5f8569-4b2b-4bf7-ab95-70e33de8f087" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">File</a></p><p id="ad89a324-c56f-4944-808f-224986360f2e" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Namespace</a></p><p id="32309570-6566-4e9a-b8c0-557cceb1be3b" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Declaration</a></p><p id="8ca7b4ae-b6cc-45b2-abdf-8ffa401bda27" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Comment</a></p><p id="250cb26e-6aad-441d-bd12-d477bc430726" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Definition</a></p><p id="ff70db8f-f191-4fd6-941b-1a72e1a42d6b" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Event</a></p><p id="fe3aaa2e-9f49-423c-b0af-4bb2de3e24a4" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">String</a></p><p id="3d98e869-6812-4417-8086-2e8c3b12f9c6" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Linq</a></p><p id="0d48ed96-9750-4e78-ba06-e09ca1be64e6" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Property</a></p><p id="9effa403-c3c3-4cc1-8636-cee1b2467e6b" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Switch</a></p><p id="a796143a-026b-4126-86fd-0355d68515b9" class="">
+</p></div></p></div></div><hr id="d84bd3a0-6f09-4759-afd4-9327f20bfe84"/><h1 id="15cb97b4-4d54-4e55-97a8-ae7b85409ff1" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Naming</a></h1><h2 id="735972e9-3862-4739-a355-b6cb28cf98b3" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">General</a></h2><ul id="d5fd50d7-8dcd-430c-835c-78bccb8fcb62" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never</strong></mark> abbreviate, unless it’s math.</li></ul><ul id="af2ae202-e673-401d-b304-c39664252076" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">favor</mark> clarity of understanding instead of chopping off a few letters.</li></ul><ul id="76605ed7-fc4c-45d4-8ff0-6fb9056e29c5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> declare the level modifiers.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b1b58cce-d852-486f-9b99-f4698429b683" class="code"><code class="language-C#">public class SchoolGeography
+{
+		private bool hasMembers;
+}
+
+public void PageDown () {}</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a9a1cefd-3cd1-4136-b008-e23d4926f0d0" class="code"><code class="language-C#">public class SchoolGeo
+{
+		bool hasMembers;
+}
+
+public void PgDn () {}</code></pre><hr id="82bbc3be-6b62-4b63-a18b-3d82f7f47817"/><h2 id="8652154b-d018-4246-8091-fe988927e0a4" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Symbols</a></h2><ul id="088a7114-4599-411a-b241-98b658d14538" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark><mark class="highlight-red"><strong> </strong></mark>use only letters.</li></ul><ul id="136dbe7f-454b-40c0-89cd-e2ff78034f3f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never </strong></mark>use underscores <code>_</code>, dashes <code>-</code> or numbers <code>123</code>.</li></ul><ul id="6bafcbcc-6be3-43f1-98ea-e521d3349a0a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">avoid</mark> the use of <code>and</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11aac3bb-7673-4be1-b1d3-162e11cb40bb" class="code"><code class="language-C#">public int TwoTimesFour
+{
+    get =&gt; 8;
+}
+
+private int daysOfTheWeek;
+
+public string johnMarySusan;</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8bde9bf5-6c9c-4b0c-9f34-a638abdb6c34" class="code"><code class="language-C#">public int TwoTimes4
+{
+		get =&gt; 8;
+}
+
+private int _days-of-the-week;
+
+public string johnMaryAndSusan;</code></pre><hr id="7c6df888-57af-4421-b3d2-c3d5b91a2627"/><h2 id="aafa9d76-8018-42a4-9388-2b38bf065195" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Acronyms</a></h2><ul id="930fa611-6bfb-4b6d-b85c-7b7f0d2f1efc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> capitalize only the first letter and only when it’s appropriate:</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6c5a0b08-0dc2-4354-b9b2-88a5ef72a2b9" class="code"><code class="language-C#" style="white-space:pre-wrap;word-break:break-all">public string FbiText
+{
+		get =&gt; &quot;FBI&quot;;
+}
+
+private int faq;</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="221f31de-3f83-4592-a3bc-06417870b39f" class="code"><code class="language-C#">public string FBIText
+{
+		get =&gt; &quot;FBI&quot;;
+}
+
+private int Faq;</code></pre><hr id="ad5bc3ab-48f1-475f-9901-9e5b60f6c514"/><h2 id="164da515-3eb1-4a2d-a1bc-5972a943b9e6" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Namespace</a></h2><ul id="573a26e6-4171-4b43-b94d-bdf4aed0a648" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>use <code>PascalCase</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="33ba352f-a119-4ba7-8543-ceef2e743b71" class="code"><code class="language-C#">public namespace Package.LastRow
+{
+
+}</code></pre><hr id="fae50f40-232a-4632-b91b-9349324455d5"/><h2 id="41085472-e616-4d43-b546-e1cd9df7b71b" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Class</a></h2><ul id="0d507e57-7c30-4749-9c94-8d08f748b69f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>the name should be a noun, as it represent a thing or an object. </li></ul><ul id="334f06e8-d18f-4810-8d07-5774d315ce4e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use <code>PascalCase</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="89bee3be-f42f-4673-be8b-61211830c739" class="code"><code class="language-C#">public class Tree
+{
+
+}</code></pre><hr id="642561e5-83da-4bd1-ba3d-b904777d7473"/><h2 id="e9eba795-5c68-4b2b-b885-4f99e0f04776" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Struct</a></h2><ul id="a665a0d6-8d00-4b4f-8ca8-405fefa94ecd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>follow the same rules as <code>class</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="15e32bf9-a85b-4016-9d59-e9d15f7ef35d" class="code"><code class="language-C#">public struct Coin
+{
+
+}</code></pre><hr id="73e13299-29e1-462b-86ec-4dbfc0b91581"/><h2 id="b0696a5e-551a-40f8-88bc-4b3a0e782ee6" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Interface</a></h2><ul id="ad4027f1-49bb-4aeb-85e3-a53acfc97259" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> the name should be an adjective, ending with -able or -ible, whenever the interface provides a capability.<ul id="ff6d78e2-eb6c-486b-bd5e-d27d24a6e0ce" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">except</mark> if the rule above is not possible, it should be a noun.</li></ul></li></ul><ul id="5adabbdf-3a53-49c6-a781-922e3dd8959e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> precede with a capital i.</li></ul><ul id="a85d5149-6e74-4c04-a4f2-6a325958f6ae" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use <code>PascalCase</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="21f48e86-053e-4b29-acc9-115b65c074d3" class="code"><code class="language-C#">public interface IDamageable
+{
+
+}</code></pre><hr id="b10e1eb0-ec10-4471-a2aa-0fb0df4c62ad"/><h2 id="74e37b75-29ca-4675-b12f-04959b12a7d8" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Enum</a></h2><ul id="9a92a1ab-0b84-4009-b950-c4f763e40bfc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> the name should be a singular type name.<ul id="ef3b3e9c-55f3-4686-bced-4c58f515110b" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">except</mark> if marked with the <code>System.FlagsAttribute</code>. It should be pluralized, as these may represent more than one value.</li></ul></li></ul><ul id="4f8c9b82-db18-423f-a907-415636a25878" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never</strong></mark> use prefix or suffix.</li></ul><ul id="f5d20ea7-bcb7-451a-9a74-b3f6ca05e1a8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use <code>PascalCase</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6c115f47-3c9d-49a3-a067-9a7c5490a86a" class="code"><code class="language-C#">public enum Verticality
+{
+    Up,
+    Down,
+}
+
+[System.FlagsAttribute]
+public enum Colors
+{
+		Red,
+		Blue,
+		Green,
+		Yellow,
+}</code></pre><hr id="e8a8b357-2af0-40de-a944-60525d1669af"/><h2 id="1150446e-0bbc-4907-9a01-b52a49bc44a6" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Field</a></h2><ul id="aa6ce3ff-493b-4d4f-b718-d580ee4bb012" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> the name should be a noun, representing a thing or state.<ul id="8d9447d5-27ef-45bd-a1e1-216ac9c6753b" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">except</mark> if it’s a <code>boolean</code> type. It should be prefixed with a verb, followed by a condition.</li></ul></li></ul><ul id="38810bde-9014-4739-982b-b7b42d384446" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>use <code>camelCase</code>.</li></ul><ul id="1cec40fd-6042-4d2a-a286-6ea9193eb2c0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> apply this to all level modifiers: <code>internal</code>, <code>private</code>, <code>protected</code> and <code>public</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="44e0752b-c658-4706-bb32-74ec0238848e" class="code"><code class="language-C#">public int count;
+
+private bool hasBullets;</code></pre><hr id="3935b952-7a64-4f95-b2fc-e05ceb33c5fb"/><h2 id="837585e6-e781-491f-bdb2-07f01a066677" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Property</a></h2><ul id="679b1f12-c919-4b53-9591-ffa23574843a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> the name should be a noun, representing a thing or state.<ul id="330523dc-c2a1-4deb-9c30-e07d697d7b1f" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">except</mark> if it’s a <code>boolean</code> type. It should be prefixed with a verb, followed by a condition.</li></ul></li></ul><ul id="7dfcfdee-acb9-468f-8385-2dd67d0f9db1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use <code>PascalCase</code> on the <code>public</code> level modifier.</li></ul><ul id="a4dcc0b6-dcdf-412d-bb1a-6b8ea6f45eb8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use <code>camelCase</code> on the other level modifiers.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="91c9cab1-f108-49a7-8166-a2d0768f4255" class="code"><code class="language-C#">public bool IsHeavy
+{
+    get =&gt; false;
+}
+
+protected string name
+{
+    get =&gt; &quot;none&quot;;
+}</code></pre><hr id="45ec9d23-d05f-4dac-8115-548a92309f5d"/><h2 id="7750b5bb-4a83-4bf2-9cef-dd530395fcbd" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Method</a></h2><ul id="6d6556eb-2a7c-4f57-90bd-c02324e2b96a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> the name should contain a verb, as it’s used to make an object take action.</li></ul><ul id="76e3faa7-9e5a-4fb6-88ef-44dbdba9505d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use <code>PascalCase</code>.</li></ul><ul id="82f2d01e-073f-4b08-abb1-8d8f2e493171" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> apply this to all level modifiers: <code>internal</code>, <code>private</code>, <code>protected</code> and <code>public</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9ccbfdc7-638b-4414-92ec-0811798dbb8c" class="code"><code class="language-C#">public void SelfDelete ()
+{
+
+}</code></pre><hr id="56f917e2-f297-46f8-b4d0-09b6c5e4c98d"/><h2 id="0afedef3-f6c3-485b-8f19-774989b4dd53" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Local variable</a></h2><ul id="a951633f-9188-49c9-89e2-a4f896032666" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> the name should be a noun, representing a thing or state.<ul id="b64307f4-ea81-4bd9-a86f-2146d71a5af6" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">except</mark> if it’s a <code>boolean</code> type. It should be prefixed with a verb, followed by a condition.</li></ul></li></ul><ul id="3708dbea-e5dd-4fe7-b666-dfadcc541cd6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>use <code>camelCase</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f102a647-9ebe-4979-9458-649368d3fa91" class="code"><code class="language-C#">{
+    bool willExplode = false;
+		var alphabet = &quot;ABC&quot;;
+}</code></pre><hr id="3f44813d-0ef5-4d56-8ff4-30cd362fb5e3"/><h2 id="c4c36469-5890-4121-94d5-cdb602a18c79" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Parameters</a></h2><ul id="a681220d-80c4-4e44-bca0-c238b0eb70e3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> the name should be a noun, representing a thing or state.<ul id="2f7cab89-4a19-4cb4-91d2-59802efdc348" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">exception</mark> if it’s a <code>boolean</code> type. It should be prefixed with a verb, followed by a condition.</li></ul></li></ul><ul id="7e611435-76d6-4bec-9e4d-9e02824ecaf6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>use <code>camelCase</code>.</li></ul><ul id="43b89f71-1505-4e7c-b82a-ba155afef817" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> a single letter, inside of <code>for</code>.</li></ul><ul id="c4ef26dd-6ba0-4861-8c58-01b2d7396ea9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">avoid </mark>using single letters, if lambdas have more than one parameter.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2c403538-c20a-459b-9091-e10309e5f4fa" class="code"><code class="language-C#">public void StartEngine (bool isHeavy, int speed) {}
+
+for (int i = 0; i &lt; 10; i++) {}
+
+RegisterCallback (x =&gt; x.Speed = 0);
+
+RegisterEvent ((blue, speed) =&gt; this.speed = blue.heigth * speed);</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0f4a4b45-f015-46f0-bc69-ac3a5accc7cc" class="code"><code class="language-C#">for (int index = 0; index &lt; 10; index++) {}
+
+RegisterEvent ((x,y) =&gt; speed = x.heigth * y);</code></pre><hr id="75ff385e-6086-4635-a19d-7270485284c9"/><h2 id="b9c0587f-69b6-4d9e-b98f-db96a6e01dd3" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Event</a></h2><ul id="53d78236-0def-4950-9745-82a43e4772cd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> the name should be prefixed with <code>on</code>.<ul id="3ba96a4b-b2f5-4de7-b525-0652e771383e" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal"><strong>always </strong></mark>follow with a verb on simple past, if invoked after its represented action.</li></ul><ul id="f1718b70-2022-4a23-b5a3-b78155e397bc" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal"><strong>always </strong></mark>follow with a verb on present, if invoked before or during its represented action.</li></ul></li></ul><ul id="37180f6f-18d3-463b-87a5-cac0c0d3730d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use <code>PascalCase</code>.</li></ul><ul id="4bcaa124-119d-4128-8972-158114d37a42" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>apply this same rules to <code>UnityEvent</code>;</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="662b4667-9be2-4fe9-84e4-901e035b9aa2" class="code"><code class="language-C#">public event Action OnExplode;
+
+public UnityEvent&lt;int&gt; OnDisabled;</code></pre><hr id="cefb4798-88c2-460c-bf70-da87258f8783"/><h1 id="815973a9-c37b-449e-a49a-f016361991dd" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Braces</a></h1><h2 id="66abe49f-06e6-46c9-acd6-583038080288" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">General</a></h2><ul id="ce3902b8-4aab-469c-8a9b-8eb778d327c3" class="bulleted-list"><li style="list-style-type:disc">always put braces alone on a new line, for the following: <code>class</code>, <code>struct</code>, <code>interface</code>, <code>namespace</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e4bc5260-ae90-4bd4-b617-f02b503bb51e" class="code"><code class="language-C#">public namespace Vehicles.FourWheels
+{
+		public class Car
+		{
+				public struct Door
+				{
+
+				}
+		}
+
+		public interface IDrivable
+		{
+
+		}
+}
+</code></pre><h2 id="63e6248b-2a4a-4996-a8ca-03189df5fc69" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Property</a></h2><ul id="ffd8b8a6-b9c4-4cdb-b98f-36f8ae3b2dee" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> put braces on a new line alone</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3832f04f-9da4-46cb-aefc-283b31776928" class="code"><code class="language-C#">public bool IsBoolean
+{
+    get =&gt; false;
+}
+
+public string Name
+{
+    set
+    {
+        id = 0;
+        name = value;
+    }
+}</code></pre><hr id="2f9c5c11-490a-4dd2-ade6-f08c17e8f48b"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d5e7195a-2083-4c7b-b3e2-6a9ed628211b" class="code"><code class="language-C#">public bool IsBoolean { get =&gt; false }
+
+public string Name {
+    set {
+        id = 0;
+        name = value;
+    }
+}</code></pre><hr id="f3409a53-8db6-4e4d-aa96-345c28d05301"/><h2 id="e7e5106c-c3f5-4690-8a95-ac6773e6bb66" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Method</a></h2><ul id="472ae338-af79-478a-b173-f57768e832fe" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> put braces on a new line</li></ul><ul id="47a11d7b-821a-4afd-9967-08c486ec1270" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-teal">always</mark></strong> use empty braces on the same line of the method declaration.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b9a4d5ac-e37c-4855-8055-7a2e797662e9" class="code"><code class="language-C#">public void NewMethod ()
+{
+    Statement();
+}
+
+protected virtual void CreateAttachment () {}</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="674c320d-c66d-4216-b275-2539da317bb6" class="code"><code class="language-C#">public void NewMethod () {
+    isBoolean = true;
+}
+
+protected virtual void CreateAttachment () 
+{
+}</code></pre><hr id="34e52d04-21bd-4242-a103-49eb46e132ff"/><h2 id="b640d9ef-57b3-4002-be90-7c8509f05c42" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Condition</a></h2><ul id="00c4d432-c670-4047-a3d1-f80be21ce001" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-teal">always</mark></strong> use braces on a new line alone, if writing more than one statement.</li></ul><ul id="c4b68fb0-c6cd-4535-9403-d9cd5237aa26" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never</strong></mark> omit braces, if using more than one statement after a condition.</li></ul><ul id="c92e8e9a-ddee-4755-bd52-991bcd83319f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never</strong></mark> omit braces, if nesting conditions.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7794fafa-4caa-4a9d-824f-45066eb93e1e" class="code"><code class="language-C#">if (isBoolean == true)
+    return;
+
+if (instance == null)
+    FirstStatement();
+else if (text == &quot;&quot;) 
+    SecondStatement();
+else
+    intVar++;
+
+if ((10 / 2) == 5) {
+    Statement();
+}
+
+if (table == null)
+{
+    if (chair == null)
+    {
+        ChairStatement();
+    }
+}</code></pre><hr id="370abf40-c1ae-4351-b453-0610baa06d18"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6b7f367e-05e6-41dc-9f35-d7e34756bc82" class="code"><code class="language-C#">if (isBoolean == true) {
+    Statement();
+    return;
+}
+
+if (instance == null) {
+    intVar++;
+    FirstStatement();
+}
+else 
+    SecondStatement();
+    
+if (table == null)
+    if (chair == null)
+        ChairStatement();</code></pre><hr id="c629a52d-25ca-4cce-a925-884bc1c11d7b"/><h2 id="2d7dbb58-d62e-42b2-a8e0-709ce183f9a9" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Switch</a></h2><ul id="b421e9da-f4ff-425a-a21b-989c16eddfa4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use the first and last brace on a new line alone.</li></ul><ul id="20520e24-ed48-4ef2-993c-3885d92212d0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> omit braces. Leave an empty line between <code>case</code>.</li></ul><ul id="93b97947-04cd-4b1f-b716-dc8be1cf448e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never</strong></mark> use one line <code>case</code>.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f4c0eb09-eb7c-4032-8141-695378b29752" class="code"><code class="language-C#">switch (condition)
+{
+    default:
+        Notify();
+
+    case 0:
+        Statement();
+        break;
+
+    case 1:
+        SecondStatement();
+				count++;
+        break;
+}</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="76233a6a-015e-4c4f-b8be-3e766db3eb1f" class="code"><code class="language-C#">switch (condition) {
+    default:
+        Notify();
+    
+    case 0: Statement(); break;
+    
+		case 1:
+		{
+				SecondStatement();
+				count++;
+				break;
+		}
+}</code></pre><hr id="d7474c18-70ff-43d9-9cd2-a56fc17ecac6"/><h1 id="a38ba739-6d1a-42c7-9970-da817b8c0fd8" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Practices</a></h1><h2 id="9d3ea479-1ce8-4c1b-9d9a-2eb2f4f28ee8" class="">Parameters</h2><ul id="62c0c8f2-c455-46bc-82bc-10281cfbdad2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">favor</mark> using <code>var</code>.</li></ul><ul id="a1d9bc8b-4045-49e6-9f51-3b4d584e0eea" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>use <code>this</code> to avoid ambiguity between members and local variables.</li></ul><ul id="90a2f9e1-233a-4285-ac48-1ef91e7de08d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">avoid</mark> <code>var</code> if it makes the type ambiguous.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0f6fb228-b206-4475-9aba-e41bb72d6de1" class="code"><code class="language-C#">{
+    bool willExplode = false;
+    var doubleValue = (double)(2 * 2);
+    var rock = material as Rock;
+    var text = material.ToString();
+    
+    if (Raycast(ray, out var hit))
+    {
+        Debug.Log(hit);
+    }
+}
+
+public class Train ()
+{
+    private float speed;
+
+    public Train (float speed)
+    {
+        this.speed = speed;
+    }
+}</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="45abe107-7426-4b4d-b68d-cba1bc1557dc" class="code"><code class="language-C#">{
+    var doubleValue = 2 * 2;
+    var rock = material;
+    var text = StartMovement();
+
+		if (Raycast(ray, out var found))
+    {
+        Debug.Log(found);
+    }
+}
+
+public class Train ()
+{
+    private float speed;
+
+    public Train (float speed)
+    {
+        speed = speed;
+    }
+}</code></pre><hr id="37bfe829-57ec-4491-a03e-1da0f4850834"/><h2 id="5600ed85-7e7c-44be-83fb-2ea05f0c79a9" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Enum</a></h2><ul id="4c23e56e-c310-4d7b-92ec-cbc01c158cbf" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">favor</mark> declaring the member <code>None</code>, with a initial value of zero.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5a0712f8-eb85-4b6f-b231-2474ec4a5011" class="code"><code class="language-C#">public enum Side
+{
+		None = 0,
+		Up,
+		Down,
+		Right,
+		Left,
+}</code></pre><hr id="59066176-9682-4e29-bd68-89655beeec3f"/><h2 id="97bfb965-8071-4ffb-b761-04404b4738f4" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">File</a></h2><ul id="b138f6e9-2723-433d-a0ee-11c14c16a63d" class="bulleted-list"><li style="list-style-type:disc">Column limit: 120.</li></ul><ul id="4cef0d2c-3fc5-4ff6-b635-5e1d109add40" class="bulleted-list"><li style="list-style-type:disc">Indentation must be the size of four spaces.</li></ul><ul id="512984d6-5976-4075-be43-9929ad52d467" class="bulleted-list"><li style="list-style-type:disc">Tab must create four spaces.</li></ul><ul id="e055ba46-e9f8-41d8-9e4a-b16d951045a4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> end the file with an empty single line.</li></ul><ul id="b5038d55-4071-42ce-8227-e6b0f7bd7ffb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never</strong></mark> follow an empty line, with another empty line.</li></ul><hr id="0e6bbe88-24df-44ae-ac1d-16a0fea3518f"/><h2 id="67c9fd82-3522-4cb9-9f28-418dbb447fb0" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Namespace</a></h2><ul id="3da23552-0a36-430c-9656-28aaf44b0864" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> import at the top of the file, outside the declaration of any <code>namespace</code>.</li></ul><ul id="97ff0ec5-b88d-4222-b7f4-7239111aec52" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> put <code>System.*</code> namespaces on top of all the others.</li></ul><ul id="98202d15-95bf-4cfb-b6ba-29e5b005f17b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always </strong></mark>sort them alphabetically.</li></ul><ul id="1f180ae4-01e2-4e69-90ab-cca6f5457606" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never</strong></mark> leave unused namespaces.</li></ul><hr id="f0c50fdf-d08d-4541-ae31-f0f529db69be"/><h2 id="51e5d18c-7e34-41a7-a39b-94a8b79f1f01" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Declaration</a></h2><ul id="796ea9f6-0ae3-4a47-897d-a89cb1d6c111" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> match the source file’s name with the <code>MonoBehaviour</code> declared inside of it.</li></ul><ul id="fa78021c-8dd8-480b-9761-a03a65c93000" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> declare only one structure per file.</li></ul><ul id="3f2ccfd7-e9a5-4992-8027-36a80da3385f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>never</strong></mark> declare an <code>enum</code>, <code>struct</code> or <code>class</code> inside another class, unless not public.</li></ul><ul id="1616f146-913f-412b-812b-bbd7d3a351d9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">favor</mark> declaring <code>class</code> instead of <code>struct</code>.</li></ul><ul id="2bda573a-293d-419a-916c-743965adaafe" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> declare fields at the top of the class.</li></ul><ul id="12381261-653a-4df0-b4dd-ebe5592ef74e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">avoid</mark> using public fields.</li></ul><hr id="b4c073de-208d-484a-8aa0-6698f1e54789"/><h2 id="6c3ab568-2e65-4e67-b009-b7157b49f637" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Comment</a></h2><ul id="2df2bc76-33fe-45e7-b2bb-0c68b11a79ee" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>Always</strong></mark> use <code>///</code> to produce comments in classes and its members. It should automatically create a <code>&lt;summary&gt;</code> tag or <code>&lt;parameter&gt;</code> and <code>&lt;return&gt;</code>, if necessary.</li></ul><ul id="5bff02a0-3c91-4f6e-8aaa-418870058696" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">favor</mark> using the <code>[ToolTip]</code> attribute, as it will create both editor and XML comment.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f1d53996-bfb9-4c2a-8f4d-b536d3c9fcf3" class="code"><code class="language-C#">/// &lt;summary&gt;
+/// Represent the graphics and collision of the arena.
+/// &lt;/summary&gt;
+public class Scenario
+{
+		[SerializeField]
+		[ToolTip(&quot;Text that will be displayed on the main menu.&quot;)]
+		private string uiName;
+}</code></pre><hr id="a505a9b6-d877-4efc-a604-aee034919f6d"/><h2 id="870a18df-e4e9-4ed4-92c9-01f7792d5be9" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Definition</a></h2><ul id="e1bca2c5-31f1-4767-b1a6-4f73f108600c" class="bulleted-list"><li style="list-style-type:disc">Never use <code>new()</code>, if the type is not explicit on the left-hand side.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b88fc1d2-e82e-42c0-b0f1-4f32f11bd1c7" class="code"><code class="language-C#">private List&lt;int&gt; manyNumbers = new();
+
+{
+    List&lt;int&gt; localNumbers = null;
+		localNumbers = new List&lt;int&gt;();
+}</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0d5ffd26-1d3d-40de-b269-37af3508b135" class="code"><code class="language-C#">{
+    List&lt;int&gt; localNumbers = null;
+		localNumbers = new();
+}</code></pre><hr id="db0964e4-84df-46a7-9acb-17ab316f6b89"/><h2 id="a69291de-378d-4c54-9b06-5c366d86af3e" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Event</a></h2><ul id="a00716e2-3b2d-4837-bafa-f3eadb224144" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">favor</mark> using <code>event</code> for callbacks.<ul id="814c5c1a-68db-4d67-9a42-657dd0022aae" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">except</mark> when exposing to the editor, then use <code>UnityEvent</code>.</li></ul></li></ul><ul id="a3d9d453-c325-427e-81d2-94147a10f4e1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">favor</mark> using <code>System.Action</code>.</li></ul><hr id="3f10c192-3acf-4e82-8a8c-ce76ceabe7ec"/><h2 id="0736531f-09e8-43a3-bd9b-85b0c699d163" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">String</a></h2><ul id="5f575c0d-0299-47fa-ba02-aa130dd20ae2" class="bulleted-list"><li style="list-style-type:disc">string interpolation = $””</li></ul><ul id="297a10d3-f001-4239-a709-719fa6550059" class="bulleted-list"><li style="list-style-type:disc">favor using the <code>+</code> operator, to increase readibility.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="524abc90-6f7d-44ab-8106-a68021841513" class="code"><code class="language-C#">public string introText = &quot;&quot; + + + + 
+
+private string listText = $&quot;{someList.Name} has {someList.Count} children.&quot;;
+
+$&quot;{3.25f:F3}&quot;</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6704b7b4-3d2b-4445-9a62-b47feebaeb1e" class="code"><code class="language-C#">public string introText = &quot;&quot;</code></pre><hr id="54319156-6966-46a7-a082-e175cf38fc37"/><h2 id="e8d17b68-d052-4980-bd2f-6b3005f20e04" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Linq</a></h2><ul id="f16fd907-cf14-4aa1-a70f-180905a41064" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">favor</mark> using it when handling collections.</li></ul><ul id="d8c795e0-6918-4d81-9ff7-ca330a4b8a20" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>always</strong></mark> use only one type: keywords or methods</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9582d9ad-7522-4b1f-906f-d2bbc2122f5d" class="code"><code class="language-C#">as select</code></pre><hr id="15ddfdbd-0772-45dc-81f0-aa61507b5144"/><h1 id="98f29e73-c217-4b82-9d50-063f32f493d4" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Property</a></h1><ul id="1b241c65-e7e3-49a6-87ba-809b3dc16344" class="block-color-default bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">avoid</mark> auto-Implemented properties, because Unity editor can’t display the anonymous field.<ul id="e75a6b47-fe49-4d88-84c8-a15c3c943e41" class="bulleted-list"><li style="list-style-type:circle">Instead, explicitly declare the field for the property.</li></ul></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b1e6799d-f5ac-41e2-9dd2-880b3ee23194" class="code"><code class="language-C#">public bool IsBoolean
+{
+    get =&gt; isBoolean;
+    set =&gt; isBoolean = value;
+}
+
+[SerializeField]
+private bool isBoolean;</code></pre><hr id="ca7dadeb-7038-424e-b42a-c8429090e39e"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4c220013-7620-4dbf-8b5c-9a2c222a2cff" class="code"><code class="language-C#">public bool IsBoolean { get; set; }</code></pre><hr id="04261499-f7ab-44ed-a7e3-bd2525fcdc08"/><h2 id="101a1fdc-93e7-47c4-8108-410f13ec6dcf" class=""><a href="https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21">Switch</a></h2><ul id="13ce7109-d629-41d0-92d1-f9db9cefad01" class="bulleted-list"><li style="list-style-type:disc">always implement default, to handle unknown cases.</li></ul><ul id="6bd7cbdd-5299-4432-b304-8099921faeb7" class="bulleted-list"><li style="list-style-type:disc">always leave an explicit comment, when falling through.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="51c52164-1855-406c-8a01-d07423b2a3bc" class="code"><code class="language-C#">switch (otherCondition)
+{
+    default:
+				// Fallingthrough
+
+    case 0: 
+				headerText = &quot;invalid value&quot;;
+				break;
+
+    case 1:
+				headerText = &quot;initiating&quot;; 
+				break;
+}</code></pre><hr id="91c1b058-f57c-48dc-93fb-ef1786f5b517"/><p id="1ac87841-5f00-44ae-a0bd-fabb5bcfa7b1" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3ed25122-8c84-43e2-bbab-934c9275e9ce" class="code"><code class="language-C#">// TODO
+
+// Using classes to nest variables or to simply enjoy of the editor folding option
+
+// ? operator when calling methods from objects
+
+// Nesting parameters to the same identation of the first one, increase readibility
+
+// Properties vs methods of Get and Set
+
+// When using UnityEvent or any other callback that is not an event, you can 
+// hide the member and create methods to call, register and unregister to it.
+// It&#x27;s a more extensive approach but it will allow proper encapsulation
+
+// Singleton boilerplate
+
+// foreach (var item in List)
+
+// Line breaks should occur before binary operators, if necessary.
+
+// avoid unnecessary comments inside of code blocks
+
+// naming of coroutines 
+// (how to deal with coroutines being stopped when the GO is disabled)
+
+// always use a brace alone in each line, when the lambda have more than one expression
+
+// if lambda is referenced outside its declaration, create a method for it
+
+// Field initializers are generally encouraged.
+
+// Avoid Container.ForEach(...) for anything longer than a single statement.
+
+// Prefer List&lt;&gt; when the size of the container can change.
+// Prefer arrays when the size of the container is fixed and known at construction time.
+// Prefer array for multidimensional arrays.
+
+// have .editorConfig for this whole style
+// have an editor theme style
+
+// C# keywords (using, try, as,...)</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
