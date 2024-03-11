@@ -14,6 +14,12 @@ This coding style is based on the following guidelines:
 
 [Namoo](#Naming)
 
+(#Naming)
+
+[#Naming]
+
+<#Naming>
+
 [General](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
 
 [Symbols](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
