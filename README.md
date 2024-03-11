@@ -93,7 +93,7 @@ This coding style is based on the following guidelines:
 ```csharp
 public class SchoolGeography
 {
-		private bool hasMembers;
+    private bool hasMembers;
 }
 
 public void PageDown () {}
@@ -102,7 +102,7 @@ public void PageDown () {}
 ```csharp
 public class SchoolGeo
 {
-		bool hasMembers;
+    bool hasMembers;
 }
 
 public void PgDn () {}
@@ -130,7 +130,7 @@ public string johnMarySusan;
 ```csharp
 public int TwoTimes4
 {
-		get => 8;
+    get => 8;
 }
 
 private int _days-of-the-week;
@@ -147,7 +147,7 @@ public string johnMaryAndSusan;
 ```csharp
 public string FbiText
 {
-		get => "FBI";
+    get => "FBI";
 }
 
 private int faq;
@@ -156,7 +156,7 @@ private int faq;
 ```csharp
 public string FBIText
 {
-		get => "FBI";
+    get => "FBI";
 }
 
 private int Faq;
@@ -237,10 +237,10 @@ public enum Verticality
 [System.FlagsAttribute]
 public enum Colors
 {
-		Red,
-		Blue,
-		Green,
-		Yellow,
+    Red,
+    Blue,
+    Green,
+    Yellow,
 }
 ```
 
@@ -363,18 +363,18 @@ public UnityEvent<int> OnDisabled;
 ```csharp
 public namespace Vehicles.FourWheels
 {
-		public class Car
-		{
-				public struct Door
-				{
+    public class Car
+    {
+        public struct Door
+        {
 
-				}
-		}
+        }
+    }
 
-		public interface IDrivable
-		{
+    public interface IDrivable
+    {
 
-		}
+    }
 }
 
 ```
@@ -522,12 +522,12 @@ switch (condition) {
     
     case 0: Statement(); break;
     
-		case 1:
-		{
-				SecondStatement();
-				count++;
-				break;
-		}
+        case 1:
+        {
+            SecondStatement();
+            count++;
+            break;
+        }
 }
 ```
 
@@ -571,7 +571,7 @@ public class Train ()
     var rock = material;
     var text = StartMovement();
 
-		if (Raycast(ray, out var found))
+    if (Raycast(ray, out var found))
     {
         Debug.Log(found);
     }
@@ -597,11 +597,11 @@ public class Train ()
 ```csharp
 public enum Side
 {
-		None = 0,
-		Up,
-		Down,
-		Right,
-		Left,
+    None = 0,
+    Up,
+    Down,
+    Right,
+    Left,
 }
 ```
 
@@ -648,9 +648,9 @@ public enum Side
 /// </summary>
 public class Scenario
 {
-		[SerializeField]
-		[ToolTip("Text that will be displayed on the main menu.")]
-		private string uiName;
+    [SerializeField]
+    [ToolTip("Text that will be displayed on the main menu.")]
+    private string uiName;
 }
 ```
 
@@ -749,15 +749,15 @@ public bool IsBoolean { get; set; }
 switch (otherCondition)
 {
     default:
-				// Fallingthrough
+    // Fallingthrough
 
     case 0: 
-				headerText = "invalid value";
-				break;
+    headerText = "invalid value";
+    break;
 
     case 1:
-				headerText = "initiating"; 
-				break;
+    headerText = "initiating"; 
+    break;
 }
 ```
 
