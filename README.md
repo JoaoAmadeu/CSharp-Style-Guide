@@ -22,7 +22,7 @@ This coding style is based on the following guidelines:
 | [Field](#Field)                   |
 | [Property](#Property)             |
 | [Method](#Method)                 |
-| [Local variable](#Local-variable) |
+| [Local variable](#name-local-variable) |
 | [Parameters](#Parameters)         |
 | [Event](#Event)                   |
 
@@ -254,7 +254,8 @@ public void SelfDelete ()
 ---
 
 <!-- <h2 name="Local variable">Local variable</h2> -->
-## Local Variable
+<!-- ## Local Variable -->
+<h2 name="name-local-variable">Local variable</h2>
 
 - **always** the name should be a noun, representing a thing or state.
     - except if it’s a `boolean` type. It should be prefixed with a verb, followed by a condition.
