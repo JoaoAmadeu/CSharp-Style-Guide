@@ -103,8 +103,8 @@ Markup : [text goes here](#section_name)
 
 <sup> this text </sup>
 
-<p>A paragraph
-with two lines.</p>
+A paragraph  
+with two lines.
 
 not text<br/>
 someother text
