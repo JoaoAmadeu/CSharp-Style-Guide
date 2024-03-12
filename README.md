@@ -9,43 +9,26 @@ This coding style is based on the following guidelines:
 - [O’Reilly](https://www.oreilly.com/library/view/java-pocket-guide/9781491938683/ch01.html)
 
 # Index
-| [Naming](#Naming)                 | [Braces](#Braces) | [Practices](#Practices) |
-| :---                              | :---:             | ---:          |
-| [General](#General)               | [General](#General)   | [Parameters](#Parameters) |
-| [Symbols](#Symbols)               | [Property](#Property)   | [Enum](#Enum) |
-| [Acronyms](#Acronyms)             | [Method](#Method)       | [File](#File)
-| [Namespace](#Namespace)           | [Condition](#Condition) | [Namespace](#Namespace)
-| [Class](#Class)                   | [Switch](#Switch)       | [Declaration](#Declaration)
-| [Struct](#Struct)                 |                         | [Comment](#Comment)
-| [Interface](#Interface)           |
-| [Enum](#Enum)                     |
-| [Field](#Field)                   |
-| [Property](#Property)             |
-| [Method](#Method)                 |
-| [Local variable](#name-local-variable) |
-| [Parameters](#Parameters)         |
-| [Event](#Event)                   |
-
-[Definition](#Definition)
-
-[Event](#Event)
-
-[String](#String)
-
-[Linq](#Linq)
-
-[Property](#Property)
-
-[Switch](#Switch)
-
----
+| [Naming](#Naming)                    	 | [Braces](#Braces) 		 | [Practices](#Practices) 		|
+| :---                                   | :---:             	         | ---:          			|
+| [General](#name-general)               | [General](#brace-general)     | [Parameters](#practice-parameters) 	|
+| [Symbols](#name-symbols)               | [Property](#brace-property)   | [Enum](#practice-enum) 		|
+| [Acronyms](#name-acronyms)             | [Method](#brace-method)       | [File](#practice-file)		|
+| [Namespace](#name-namespace)           | [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
+| [Class](#name-class)                   | [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
+| [Struct](#name-struct)                 |                         	 | [Comment](#practice-comment)		|
+| [Interface](#name-interface)           |				 | [Definition](#practice-definition)	|
+| [Enum](#name-enum)                     |				 | [Event](#practice-event)		|
+| [Field](#name-field)                   |				 | [String](#practice-string)		|
+| [Property](#name-property)             |				 | [Linq](#practice-linq)		|
+| [Method](#name-method)                 |				 | [Property](#practice-property)	|
+| [Local variable](#name-local-variable) |				 | [Switch](#practice-switch)		|
+| [Parameters](#name-parameters)         |
+| [Event](#name-event)                   |
 
 # Naming
 
-## General [🔝](#Index)
-
-[🔝](#Index)
-[top](#Index)
+## General {#name-general} [🔝](#Index)
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
