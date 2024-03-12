@@ -145,7 +145,7 @@ public struct Coin
 <h2 id="name-interface"> Interface </h2>
 
 ✔️ **Always** the name should be an adjective, ending with -able or -ible, whenever the interface provides a capability.  
-    <sub>exception</sub> if the rule above is not possible, it should be a noun.  
+    <sub>if the rule above is not possible, it should be a noun.</sub>  
 ✔️ **Always** precede with a capital i.  
 ✔️ **Always** use `PascalCase`.
 
@@ -158,9 +158,9 @@ public interface IDamageable
 
 <h2 id="name-enum"> Enum </h2>
 
-✔️ **Always** the name should be a singular type name.
-    - except if marked with the `System.FlagsAttribute`. It should be pluralized, as these may represent more than one value.
-❌ **Never** use prefix or suffix.
+✔️ **Always** the name should be a singular type name.  
+    - except if marked with the `System.FlagsAttribute`. It should be pluralized, as these may represent more than one value.  
+❌ **Never** use prefix or suffix.  
 ✔️ **Always** use `PascalCase`.
 
 ```csharp
