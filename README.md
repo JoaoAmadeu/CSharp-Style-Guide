@@ -102,6 +102,11 @@ Markup : [text goes here](#section_name)
 
 ## General
 
+<ul>
+<li>sublist</li>
+<li>sublist</li>
+</ul>
+
 ❌ **never** abbreviate, unless it’s math.
 +
 ✅ **always** declare the level modifiers.
@@ -126,7 +131,7 @@ public class SchoolGeo
 
 public void PgDn () {}
 ```
-
+<sup> this text </sup>
 ---
 
 ## Symbols
@@ -145,7 +150,7 @@ private int daysOfTheWeek;
 
 public string johnMarySusan;
 ```
-
+<sub> this other text </sub>
 ```csharp
 public int TwoTimes4
 {
