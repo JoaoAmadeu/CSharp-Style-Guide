@@ -89,8 +89,8 @@ This coding style is based on the following guidelines:
 ## General
 
 ❌ **never** abbreviate, unless it’s math.
-
-✅ **always** declare the level modifiers.\n
++
+✅ **always** declare the level modifiers.
 ▪️ favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
