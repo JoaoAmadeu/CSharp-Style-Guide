@@ -21,8 +21,9 @@ Markup: [heading-1](#heading-1 "Goto heading-1")
 Markup : [text goes here](#section_name)
           section_title<a name="section_name"></a>
 
-```lua
-local momose = nil
+```lua local momose = nil ```
+```cs
+public void Aja ()
 ```
 
 ===
