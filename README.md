@@ -146,7 +146,7 @@ public struct Coin
 
 ✔️ **Always** the name should be an adjective, ending with -able or -ible, whenever the interface provides a capability.  
          Except if the rule above is not possible, it should be a noun.  
-✔️ **Always** precede with a capital i.  
+✔️ **Always** precede with a capital i `I`.  
 ✔️ **Always** use `PascalCase`.
 
 ```csharp
@@ -159,7 +159,7 @@ public interface IDamageable
 <h2 id="name-enum"> Enum </h2>
 
 ✔️ **Always** the name should be a singular type name.  
-    - except if marked with the `System.FlagsAttribute`. It should be pluralized, as these may represent more than one value.  
+         Except if marked with the `System.FlagsAttribute`, then it should be pluralized, as these may represent more than one value.  
 ❌ **Never** use prefix or suffix.  
 ✔️ **Always** use `PascalCase`.
 
@@ -180,12 +180,11 @@ public enum Colors
 }
 ```
 
-## [Field](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+<h2 id="name-field"> Field </h2>
 
-- **always** the name should be a noun, representing a thing or state.
-    - except if it’s a `boolean` type. It should be prefixed with a verb, followed by a condition.
-- **always** use `camelCase`.
-- **always** apply this to all level modifiers: `internal`, `private`, `protected` and `public`.
+✔️ **Always** the name should be a noun, representing a thing or state.  
+         Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
+✔️ **Always** use `camelCase`.
 
 ```csharp
 public int count;
@@ -193,14 +192,11 @@ public int count;
 private bool hasBullets;
 ```
 
----
+<h2 id="name-property"> Property </h2>
 
-## [Property](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-- **always** the name should be a noun, representing a thing or state.
-    - except if it’s a `boolean` type. It should be prefixed with a verb, followed by a condition.
-- **always** use `PascalCase` on the `public` level modifier.
-- **always** use `camelCase` on the other level modifiers.
+✔️ **Always** the name should be a noun, representing a thing or state.  
+         Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
+✔️ **Always** use `PascalCase`.
 
 ```csharp
 public bool IsHeavy
@@ -208,55 +204,53 @@ public bool IsHeavy
     get => false;
 }
 
-protected string name
+protected string Name
 {
     get => "none";
 }
 ```
 
----
+<h2 id="name-method"> Method </h2>
 
-## [Method](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-- **always** the name should contain a verb, as it’s used to make an object take action.
-- **always** use `PascalCase`.
-- **always** apply this to all level modifiers: `internal`, `private`, `protected` and `public`.
+✔️ **Always** the name should contain a verb, as it’s used to make an object take action.  
+✔️ **Always** use `PascalCase`.
 
 ```csharp
 public void SelfDelete ()
 {
 
 }
+
+protected int GetNumber ()
+{
+    return -1;
+}
 ```
 
----
 
-<!-- <h2 name="Local variable">Local variable</h2> -->
-<!-- ## Local Variable -->
-<h2 name="name-local-variable">Local variable</h2>
+<h2 name="name-local-variable"> Local variable </h2>
 
-- **always** the name should be a noun, representing a thing or state.
-    - except if it’s a `boolean` type. It should be prefixed with a verb, followed by a condition.
-- **always** use `camelCase`.
+✔️ **Always** the name should be a noun, representing a thing or state.  
+         Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
+✔️ **Always** use `camelCase`.
 
 ```csharp
 {
     bool willExplode = false;
-		var alphabet = "ABC";
+    var alphabet = "ABC";
 }
 ```
 
----
+<h2 name="name-parameters"> Parameters </h2>
 
-## [Parameters](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-- **always** the name should be a noun, representing a thing or state.
-    - exception if it’s a `boolean` type. It should be prefixed with a verb, followed by a condition.
-- **always** use `camelCase`.
-- **always** a single letter, inside of `for`.
-- avoid using single letters, if lambdas have more than one parameter.
+✔️ **Always** the name should be a noun, representing a thing or state.  
+         Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
+✔️ **Always** use `camelCase`.  
+✔️ **Always** a single letter, when inside a `for`.  
+  •  Avoid using single letters, when lambdas have more than one parameter.
 
 ```csharp
+// Allowed
 public void StartEngine (bool isHeavy, int speed) {}
 
 for (int i = 0; i < 10; i++) {}
@@ -267,20 +261,21 @@ RegisterEvent ((blue, speed) => this.speed = blue.heigth * speed);
 ```
 
 ```csharp
+// Not allowed
+public void StartEngine (bool IsHeavy, int s) {}
+
 for (int index = 0; index < 10; index++) {}
 
 RegisterEvent ((x,y) => speed = x.heigth * y);
 ```
 
----
+<h2 name="name-event"> Event </h2>
 
-## [Event](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-- **always** the name should be prefixed with `on`.
-    - **always** follow with a verb on simple past, if invoked after its represented action.
-    - **always** follow with a verb on present, if invoked before or during its represented action.
-- **always** use `PascalCase`.
-- **always** apply this same rules to `UnityEvent`;
+✔️ **Always** the name should be prefixed with `on`.  
+         if invoked after its represented action, follow with a verb on simple past.  
+         if invoked before or during its represented action, follow with a verb on present.  
+✔️ **Always** use `PascalCase`.  
+✔️ **Always** apply this same rules to `UnityEvent`;
 
 ```csharp
 public event Action OnExplode;
@@ -288,9 +283,7 @@ public event Action OnExplode;
 public UnityEvent<int> OnDisabled;
 ```
 
----
-
-# [Braces](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+# Braces
 
 ## [General](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
 
