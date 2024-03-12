@@ -10,11 +10,6 @@ This coding style is based on the following guidelines:
 
 ---
 
-<font color='red'>font color=red</font>  
-<p style="background-color:powderblue;">p style background-color</p>  
-<span class="pl-md">span with class</span>  
-<span color='red'>span color=red</span>  
-<div color='red'>div color=red</div>  
 
 Markup: [heading-1](#heading-1 "Goto heading-1")
 
@@ -39,6 +34,9 @@ public void Aja ()
 ```
 
 ```cs
+! text
+- another one
+# this
 public void Aja ()
 ```
 
