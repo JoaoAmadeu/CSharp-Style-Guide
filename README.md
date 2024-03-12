@@ -32,7 +32,7 @@ This coding style is based on the following guidelines:
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
- • Favor clarity of understanding instead of chopping off a few letters.
+  •  Favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
 // Allowed
@@ -56,9 +56,9 @@ public void PgDn () {}
 
 <h2 id="name-symbols"> Symbols </h2>
 
-❌ **Never** use underscores `_`, dashes `-` or numbers `123`.
-✔️ **Always** use only letters.
-  •  avoid the use of `and`.
+❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
+✔️ **Always** use only letters.  
+  •  Avoid the use of `and`.
 
 ```csharp
 // Allowed
