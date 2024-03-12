@@ -16,8 +16,6 @@ Markup: [heading-1](#heading-1 "Goto heading-1")
 Markup : [text goes here](#section_name)
           section_title<a name="section_name"></a>
 
-===
-
 # Index
 
 [Naming](#Naming)
@@ -98,6 +96,14 @@ Markup : [text goes here](#section_name)
 <ins>*Always*</ins> declare the level modifiers.  
 Favor clarity of understanding instead of chopping off a few letters.
 
+❌ **Never** abbreviate, unless it’s math.  
+✔️ **Always** declare the level modifiers.  
+    Favor clarity of understanding instead of chopping off a few letters.
+
+🔴 **Never** abbreviate, unless it’s math.  
+🟢 **Always** declare the level modifiers.  
+▫️ Favor clarity of understanding instead of chopping off a few letters.
+
 ```csharp
 // Allowed
 public class SchoolGeography
@@ -117,7 +123,6 @@ public class SchoolGeo
 
 public void PgDn () {}
 ```
----
 
 ## Symbols
 
@@ -135,7 +140,7 @@ private int daysOfTheWeek;
 
 public string johnMarySusan;
 ```
-<sub> this other text </sub>
+
 ```csharp
 public int TwoTimes4
 {
@@ -146,8 +151,6 @@ private int _days-of-the-week;
 
 public string johnMaryAndSusan;
 ```
-
----
 
 ## Acronyms
 
@@ -171,7 +174,6 @@ public string FBIText
 private int Faq;
 ```
 
----
 
 ## [Namespace](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
 
@@ -183,8 +185,6 @@ public namespace Package.LastRow
 
 }
 ```
-
----
 
 ## [Class](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
 
@@ -306,7 +306,9 @@ public void SelfDelete ()
 
 ---
 
-## [Local variable](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+<a name="section_name">
+## [Local variable]
+</a>
 
 - **always** the name should be a noun, representing a thing or state.
     - except if it’s a `boolean` type. It should be prefixed with a verb, followed by a condition.
