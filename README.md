@@ -19,7 +19,7 @@ Markup : [text goes here](#section_name)
 # Index
 
 <!-- [Naming](#Naming) -->
-(#Naming)
+[Naming]
 
 [General](#General)
 
