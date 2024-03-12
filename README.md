@@ -649,6 +649,7 @@ as select
 
 - avoid auto-Implemented properties, because Unity editor can’t display the anonymous field.
     - Instead, explicitly declare the field for the property.
+- Favor using it, instead of methods, when dealing with a single field and few calculations.
 
 ```csharp
 public bool IsBoolean
