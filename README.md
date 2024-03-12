@@ -16,6 +16,14 @@ This coding style is based on the following guidelines:
   src=""
   alt="Grapefruit slice atop a pile of other slices" />
 
+<div style="background: #ffe7e8; border: 2px solid #e66465">
+  <p style="margin: 15px; line-height: 1.5; text-align: center">
+    Well, I am the slime from your video<br />
+    Oozin' along on your livin' room floor.
+  </p>
+</div>
+
+
 Markup: [heading-1](#heading-1 "Goto heading-1")
 
 Markup : [text goes here](#section_name)
