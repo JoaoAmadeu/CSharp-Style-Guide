@@ -32,7 +32,7 @@ This coding style is based on the following guidelines:
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
-•  Favor clarity of understanding instead of chopping off a few letters.
+&nbsp;•&nbsp; Favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
 // Allowed
@@ -54,13 +54,14 @@ public class SchoolGeo
 public void PgDn () {}
 ```
 
-## Symbols
+<h2 id="name-symbols"> Symbols </h2>
 
-- **always** use only letters.
-- **never** use underscores `_`, dashes `-` or numbers `123`.
+❌ **Never** use underscores `_`, dashes `-` or numbers `123`.
+✔️ **Always** use only letters.
 - avoid the use of `and`.
 
 ```csharp
+// Allowed
 public int TwoTimesFour
 {
     get => 8;
@@ -72,6 +73,7 @@ public string johnMarySusan;
 ```
 
 ```csharp
+// Not allowed
 public int TwoTimes4
 {
     get => 8;
