@@ -21,13 +21,24 @@ Markup: [heading-1](#heading-1 "Goto heading-1")
 Markup : [text goes here](#section_name)
           section_title<a name="section_name"></a>
 
-> ```lua 
-> local momose = nil
-> ```
-> Quoting text
+```cs
+"string literal"
+'chars'
+'c'
+*help*
+> man
+>df
+$"strr {newbie}"
+#error
+#if
+#endif
+//comment
+/* sdf */
+/// asdasd
+public void Aja ()
+```
 
 ```cs
-> quoter
 public void Aja ()
 ```
 
