@@ -97,9 +97,9 @@ Markup : [text goes here](#section_name)
 The <u>u element</u> example  
 The <ins>ins element</ins> example
 
-❌ <u>Never</u> abbreviate, unless it’s math.  
-✅ <u>Always</u> declare the level modifiers.  
-▪️ Favor clarity of understanding instead of chopping off a few letters.
+<ins>Never</ins> abbreviate, unless it’s math.  
+<ins>Always</ins> declare the level modifiers.  
+Favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
 public class SchoolGeography
