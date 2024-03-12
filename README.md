@@ -13,8 +13,7 @@ This coding style is based on the following guidelines:
 <font color='red'>This text tried the font tag</font>
 
 <img
-  class="fit-picture"
-  src="/media/cc0-images/grapefruit-slice-332-332.jpg"
+  src=""
   alt="Grapefruit slice atop a pile of other slices" />
 
 Markup: [heading-1](#heading-1 "Goto heading-1")
