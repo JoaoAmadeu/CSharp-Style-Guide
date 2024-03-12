@@ -12,7 +12,7 @@ This coding style is based on the following guidelines:
 
 <font color='red'>This text tried the font tag</font>
 
-<font color='red'>jabiraba</font>
+<img alt="Grapefruit slice atop a pile of other slices" />
 
 Markup: [heading-1](#heading-1 "Goto heading-1")
 
