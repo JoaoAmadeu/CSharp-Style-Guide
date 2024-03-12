@@ -106,6 +106,9 @@ Markup : [text goes here](#section_name)
 <p>A paragraph
 with two lines.</p>
 
+not text<br/>
+someother text
+
 ❌ **never** abbreviate, unless it’s math.
 +
 ✅ **always** declare the level modifiers.
