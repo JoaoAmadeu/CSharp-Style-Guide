@@ -27,7 +27,7 @@ This coding style is based on the following guidelines:
 | Event [🔗](#name-event)                   |
 
 # Naming
----:
+
 <h2 id="name-general"> General </h2>
 
 ❌ **Never** abbreviate, unless it’s math.  
@@ -55,7 +55,7 @@ public void PgDn () {}
 ```
 
 <div style="text-align: right">
-<h2 id="name-symbols"> Symbols </h2>
+<h2 id="name-symbols"> Symbols </h2> top 
 </div>
 
 ❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
