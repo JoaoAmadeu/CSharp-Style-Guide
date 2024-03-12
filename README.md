@@ -9,25 +9,12 @@ This coding style is based on the following guidelines:
 - [O’Reilly](https://www.oreilly.com/library/view/java-pocket-guide/9781491938683/ch01.html)
 
 ---
-
-Markup : [text goes here](#section_name)
-          section_title<a name="section_name"></a>
-
-- {+ addition 1 +}
-- [+ addition 2 +]
-- {- deletion 3 -}
-- [- deletion 4 -]
+# Index
 
 | [Naming](#Naming)   | Centered | Right Aligned |
 | :---                | :---:    | ---:          |
 | [General](#General) | Cell 2   | Cell 3        |
 | [Symbols](#Symbols) | Cell 5   | Cell 6        |
-
-
-# Index
-
-
-<col span=2> aja ja </col>
 
 
 
