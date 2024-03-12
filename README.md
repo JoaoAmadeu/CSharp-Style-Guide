@@ -16,30 +16,6 @@ Markup: [heading-1](#heading-1 "Goto heading-1")
 Markup : [text goes here](#section_name)
           section_title<a name="section_name"></a>
 
-```cs
-"string literal"
-'chars'
-'c'
-*help*
-> man
->df
-$"strr {newbie}"
-#error
-#if
-#endif
-//comment
-/* sdf */
-/// asdasd
-public void Aja ()
-```
-
-```cs
-! text
-- another one
-# this
-public void Aja ()
-```
-
 ===
 
 # Index
@@ -118,9 +94,12 @@ public void Aja ()
 
 ## General
 
+The <u>u element</u> example  
+The <ins>ins element</ins> example
+
 ❌ <u>Never</u> abbreviate, unless it’s math.  
 ✅ <u>Always</u> declare the level modifiers.  
-▪️ favor clarity of understanding instead of chopping off a few letters.
+▪️ Favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
 public class SchoolGeography
