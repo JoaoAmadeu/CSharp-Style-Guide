@@ -25,67 +25,67 @@ kpkp
 
 [Symbols](#Symbols)
 
-[Acronyms](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Acronyms](#Acronyms)
 
-[Namespace](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Namespace](#Namespace)
 
-[Class](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Class](#Class)
 
-[Struct](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Struct](#Struct)
 
-[Interface](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Interface](#Interface)
 
-[Enum](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Enum](#Enum)
+<col>
+[Field](#Field)
 
-[Field](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Property](#Property)
 
-[Property](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Method](#Method)
 
-[Method](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Local variable](#Local variable)
 
-[Local variable](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Parameters](#Parameters)
 
-[Parameters](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Event](#Event)
 
-[Event](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Braces](#Braces)
 
-[Braces](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[General](#General)
+</col>
+[Property](#Property)
 
-[General](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Method](#Method)
 
-[Property](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Condition](#Condition)
 
-[Method](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Switch](#Switch)
 
-[Condition](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Practices](#Practices)
 
-[Switch](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Parameters](#Parameters)
 
-[Practices](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Enum](#Enum)
 
-[Parameters](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[File](#File)
 
-[Enum](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Namespace](#Namespace)
 
-[File](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Declaration](#Declaration)
 
-[Namespace](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Comment](#Comment)
 
-[Declaration](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Definition](#Definition)
 
-[Comment](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Event](#Event)
 
-[Definition](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[String](#String)
 
-[Event](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Linq](#Linq)
 
-[String](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Property](#Property)
 
-[Linq](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-[Property](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-[Switch](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+[Switch](#Switch)
 
 ---
 
@@ -94,7 +94,9 @@ kpkp
 ## General
 
 ❌ **never** abbreviate, unless it’s math.
+
 ✅ **always** declare the level modifiers.
+
 ▪️ favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
