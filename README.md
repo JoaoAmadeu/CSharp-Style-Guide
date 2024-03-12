@@ -12,7 +12,9 @@ This coding style is based on the following guidelines:
 
 <font color='red'>This text tried the font tag</font>
 
- <p style="color:red;">This is a red paragraph.</p> 
+ <p style="background-color:powderblue;">This is a red paragraph.</p>
+
+ 
 
 <div style="background: #ffe7e8; border: 2px solid #e66465">
   <p style="margin: 15px; line-height: 1.5; text-align: center">
