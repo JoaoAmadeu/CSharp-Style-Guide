@@ -101,29 +101,18 @@ Markup : [text goes here](#section_name)
 
 ## General
 
-<sup> this text </sup>
-
-A paragraph  
-with two lines.
-
-not text<br/>
-someother text
-
-❌ **never** abbreviate, unless it’s math.
-+
-✅ **always** declare the level modifiers.
+❌ **never** abbreviate, unless it’s math.  
+✅ **always** declare the level modifiers.  
 ▪️ favor clarity of understanding instead of chopping off a few letters.
 
+```csharp
+public class SchoolGeography
+{
+    private bool hasMembers;
+}
 
-> [!CAUTION]
-> ```csharp
-> public class SchoolGeography
-> {
->     private bool hasMembers;
-> }
-> 
-> public void PageDown () {}
-> ```
+public void PageDown () {}
+```
 
 ```csharp
 public class SchoolGeo
