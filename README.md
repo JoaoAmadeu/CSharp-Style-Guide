@@ -303,9 +303,7 @@ public void SelfDelete ()
 
 ---
 
-<a name="section_name">
-## [Local variable]
-</a>
+<h2 name="Local variable">Local variable</h2>
 
 - **always** the name should be a noun, representing a thing or state.
     - except if it’s a `boolean` type. It should be prefixed with a verb, followed by a condition.
