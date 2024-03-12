@@ -10,12 +10,7 @@ This coding style is based on the following guidelines:
 
 ---
 
-<style >
-kpkp
-</style>
-<p>okay</p>
-
-<font color='red'>aaa</font>
+<font color='red'>This text tried the font tag</font>
 
 # Index
 
@@ -36,7 +31,7 @@ kpkp
 [Interface](#Interface)
 
 [Enum](#Enum)
-<col>
+
 [Field](#Field)
 
 [Property](#Property)
@@ -52,7 +47,7 @@ kpkp
 [Braces](#Braces)
 
 [General](#General)
-</col>
+
 [Property](#Property)
 
 [Method](#Method)
@@ -93,11 +88,9 @@ kpkp
 
 ## General
 
-❌ **never** abbreviate, unless it’s math.
-
-✅ **always** declare the level modifiers.
-
-▪️ favor clarity of understanding instead of chopping off a few letters.
+- ❌ **never** abbreviate, unless it’s math.
+- ✅ **always** declare the level modifiers.
+- ▪️ favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
 public class SchoolGeography
