@@ -28,11 +28,11 @@ This coding style is based on the following guidelines:
 
 # Naming
 
-## General {#name-general} [🔝](#Index)
+## General {#name-general}
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
-+ Favor clarity of understanding instead of chopping off a few letters.
+• Favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
 // Allowed
