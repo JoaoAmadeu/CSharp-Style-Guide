@@ -107,14 +107,16 @@ Markup : [text goes here](#section_name)
 ✅ **always** declare the level modifiers.
 ▪️ favor clarity of understanding instead of chopping off a few letters.
 
-```csharp
-public class SchoolGeography
-{
-    private bool hasMembers;
-}
 
-public void PageDown () {}
-```
+> [!CAUTION]
+> ```csharp
+> public class SchoolGeography
+> {
+>     private bool hasMembers;
+> }
+> 
+> public void PageDown () {}
+> ```
 
 ```csharp
 public class SchoolGeo
