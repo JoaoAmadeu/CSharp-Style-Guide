@@ -118,8 +118,8 @@ public void Aja ()
 
 ## General
 
-❌ **never** abbreviate, unless it’s math.  
-✅ **always** declare the level modifiers.  
+❌ <u>Never</u> abbreviate, unless it’s math.  
+✅ <u>Always</u> declare the level modifiers.  
 ▪️ favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
