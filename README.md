@@ -32,7 +32,7 @@ This coding style is based on the following guidelines:
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
-&nbsp;•&nbsp; Favor clarity of understanding instead of chopping off a few letters.
+&nbsp;&nbsp;•&nbsp;&nbsp;Favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
 // Allowed
