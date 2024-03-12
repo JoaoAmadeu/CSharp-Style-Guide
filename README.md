@@ -99,6 +99,7 @@ Markup : [text goes here](#section_name)
 Favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
+// Allowed
 public class SchoolGeography
 {
     private bool hasMembers;
@@ -108,6 +109,7 @@ public void PageDown () {}
 ```
 
 ```csharp
+// Not allowed
 public class SchoolGeo
 {
     bool hasMembers;
