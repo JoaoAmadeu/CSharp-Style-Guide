@@ -39,7 +39,7 @@ Markup : [text goes here](#section_name)
 
 [Method](#Method)
 
-[Local variable](#Local variable)
+[Local variable](#Local-variable)
 
 [Parameters](#Parameters)
 
@@ -303,7 +303,8 @@ public void SelfDelete ()
 
 ---
 
-<h2 name="Local variable">Local variable</h2>
+<!-- <h2 name="Local variable">Local variable</h2> -->
+## Local Variable
 
 - **always** the name should be a noun, representing a thing or state.
     - except if it’s a `boolean` type. It should be prefixed with a verb, followed by a condition.
