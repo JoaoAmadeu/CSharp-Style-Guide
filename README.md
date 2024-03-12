@@ -11,8 +11,8 @@ This coding style is based on the following guidelines:
 # Index
 | [Naming](#Naming)                    	 | [Braces](#Braces) 		 | [Practices](#Practices) 		|
 | :---                                   | :---:             	         | ---:          			|
-| [General](#name-general)               | [General](#brace-general)     | [Parameters](#practice-parameters) 	|
-| [Symbols](#name-symbols)               | [Property](#brace-property)   | [Enum](#practice-enum) 		|
+| [General][🔗](#name-general)               | [General](#brace-general)     | [Parameters](#practice-parameters) 	|
+| Symbols [🔗](#name-symbols)               | [Property](#brace-property)   | [Enum](#practice-enum) 		|
 | [Acronyms](#name-acronyms)             | [Method](#brace-method)       | [File](#practice-file)		|
 | [Namespace](#name-namespace)           | [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
 | [Class](#name-class)                   | [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
