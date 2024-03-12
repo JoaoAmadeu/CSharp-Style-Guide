@@ -9,22 +9,23 @@ This coding style is based on the following guidelines:
 - [O’Reilly](https://www.oreilly.com/library/view/java-pocket-guide/9781491938683/ch01.html)
 
 # Index
-| [Naming](#Naming)                    	 | [Braces](#Braces) 		 | [Practices](#Practices) 		|
-| :---                                   | :---:             	         | ---:          			|
-| [🔗](#name-general) General                | [General](#brace-general)     | [Parameters](#practice-parameters) 	|
-| [🔗](#name-symbols) Symbols                | [Property](#brace-property)   | [Enum](#practice-enum) 		|
-| [🔗](#name-acronyms) Acronyms              | [Method](#brace-method)       | [File](#practice-file)		|
-| [🔗](#name-namespace) Namespace            | [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
-| [🔗](#name-class) Class                    | [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
-| [🔗](#name-struct) Struct                  |                         	 | [Comment](#practice-comment)		|
-| [🔗](#name-interface) Interface            |				 | [Definition](#practice-definition)	|
-| [🔗](#name-enum) Enum                      |				 | [Event](#practice-event)		|
-| [🔗](#name-field) Field                    |				 | [String](#practice-string)		|
-| [🔗](#name-property) Property              |				 | [Linq](#practice-linq)		|
-| [🔗](#name-method) Method                  |				 | [Property](#practice-property)	|
-| [🔗](#name-local-variable) Local variable  |				 | [Switch](#practice-switch)		|
-| [🔗](#name-parameters) Parameters          |
-| [🔗](#name-event) Event                    |
+
+| [Naming](#Naming)				| [Braces](#Braces) 		 | [Practices](#Practices) 		|
+| :---						| :---             	         | :---          			|
+| [🔗](#name-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
+| [🔗](#name-symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
+| [🔗](#name-acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
+| [🔗](#name-namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
+| [🔗](#name-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
+| [🔗](#name-struct) Struct			|                         	 | [Comment](#practice-comment)		|
+| [🔗](#name-interface) Interface		|				 | [Definition](#practice-definition)	|
+| [🔗](#name-enum) Enum				|				 | [Event](#practice-event)		|
+| [🔗](#name-field) Field			|				 | [String](#practice-string)		|
+| [🔗](#name-property) Property			|				 | [Linq](#practice-linq)		|
+| [🔗](#name-method) Method			|				 | [Property](#practice-property)	|
+| [🔗](#name-local-variable) Local variable	|				 | [Switch](#practice-switch)		|
+| [🔗](#name-parameters) Parameters		|
+| [🔗](#name-event) Event			|
 
 # Naming
 
