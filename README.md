@@ -21,7 +21,7 @@ Markup : [text goes here](#section_name)
 | [Naming](#Naming)   | Centered | Right Aligned |
 | :---                | :---:    | ---:          |
 | [General](#General) | Cell 2   | Cell 3        |
-|[Symbols](#Symbols)  | Cell 5   | Cell 6        |
+| [Symbols](#Symbols) | Cell 5   | Cell 6        |
 
 
 # Index
@@ -98,19 +98,14 @@ Markup : [text goes here](#section_name)
 
 # Naming
 
-## General
+## General [🔝](#Index)
 
-<ins>**Never**</ins> abbreviate, unless it’s math.  
-<ins>*Always*</ins> declare the level modifiers.  
-Favor clarity of understanding instead of chopping off a few letters.
+[🔝](#Index)
+[top](#Index)
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
-    Favor clarity of understanding instead of chopping off a few letters.
-
-🔴 **Never** abbreviate, unless it’s math.  
-🟢 **Always** declare the level modifiers.  
-▫️ Favor clarity of understanding instead of chopping off a few letters.
++ Favor clarity of understanding instead of chopping off a few letters.
 
 ```csharp
 // Allowed
