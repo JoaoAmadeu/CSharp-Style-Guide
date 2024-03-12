@@ -54,8 +54,9 @@ public class SchoolGeo
 public void PgDn () {}
 ```
 
-
-<h2 id="name-symbols" style="text-align: right"> Symbols </h2>
+<div style="text-align: right">
+<h2 id="name-symbols"> Symbols </h2>
+</div>
 
 ❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
 ✔️ **Always** use only letters.  
