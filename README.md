@@ -55,9 +55,7 @@ public class SchoolGeo
 public void PgDn () {}
 ```
 
-<div>
-<h2 id="name-symbols"> Symbols </h2> <span align="right"> top </span>
-</div>
+<h2 id="name-symbols"> Symbols </h2>
 
 ❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
 ✔️ **Always** use only letters.  
@@ -288,9 +286,9 @@ public UnityEvent<int> OnDisabled;
 
 # Braces
 
-## [General](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+<h2 name="brace-general"> General </h2>
 
-- always put braces alone on a new line, for the following: `class`, `struct`, `interface`, `namespace`.
+✔️ **Always** put braces alone on a new line, for the following: `class`, `struct`, `interface`, `namespace`.
 
 ```csharp
 public namespace Vehicles.FourWheels
@@ -698,6 +696,8 @@ switch (otherCondition)
 
 ```csharp
 // TODO
+
+//markdown - implement 'top' button in each header, that will bring the view to the index header
 
 // Using classes to nest variables or to simply enjoy of the editor folding option
 
