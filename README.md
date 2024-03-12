@@ -18,19 +18,19 @@ Markup : [text goes here](#section_name)
 - {- deletion 3 -}
 - [- deletion 4 -]
 
-| Left Aligned | Centered | Right Aligned |
-| :---         | :---:    | ---:          |
-| Cell 1       | Cell 2   | Cell 3        |
-| Cell 4       | Cell 5   | Cell 6        |
+| [Naming](#Naming)   | Centered | Right Aligned |
+| :---                | :---:    | ---:          |
+| [General](#General) | Cell 2   | Cell 3        |
+|[Symbols](#Symbols)  | Cell 5   | Cell 6        |
 
 
 # Index
 
-[Naming](#Naming)
 
-[General](#General)
 
-[Symbols](#Symbols)
+
+
+
 
 [Acronyms](#Acronyms)
 
