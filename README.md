@@ -10,16 +10,12 @@ This coding style is based on the following guidelines:
 
 ---
 
-
-Markup: [heading-1](#heading-1 "Goto heading-1")
-
 Markup : [text goes here](#section_name)
           section_title<a name="section_name"></a>
 
 # Index
 
-<!-- [Naming](#Naming) -->
-[Naming]
+[Naming](#Naming)
 
 [General](#General)
 
