@@ -8,66 +8,23 @@ This coding style is based on the following guidelines:
 - [Google](https://google.github.io/styleguide/csharp-style.html)
 - [O’Reilly](https://www.oreilly.com/library/view/java-pocket-guide/9781491938683/ch01.html)
 
----
 # Index
-
-| [Naming](#Naming)   | Centered | Right Aligned |
-| :---                | :---:    | ---:          |
-| [General](#General) | Cell 2   | Cell 3        |
-| [Symbols](#Symbols) | Cell 5   | Cell 6        |
-
-
-
-
-[Acronyms](#Acronyms)
-
-[Namespace](#Namespace)
-
-[Class](#Class)
-
-[Struct](#Struct)
-
-[Interface](#Interface)
-
-[Enum](#Enum)
-
-[Field](#Field)
-
-[Property](#Property)
-
-[Method](#Method)
-
-[Local variable](#Local-variable)
-
-[Parameters](#Parameters)
-
-[Event](#Event)
-
-[Braces](#Braces)
-
-[General](#General)
-
-[Property](#Property)
-
-[Method](#Method)
-
-[Condition](#Condition)
-
-[Switch](#Switch)
-
-[Practices](#Practices)
-
-[Parameters](#Parameters)
-
-[Enum](#Enum)
-
-[File](#File)
-
-[Namespace](#Namespace)
-
-[Declaration](#Declaration)
-
-[Comment](#Comment)
+| [Naming](#Naming)                 | [Braces](#Braces) | [Practices](#Practices) |
+| :---                              | :---:             | ---:          |
+| [General](#General)               | [General](#General)   | [Parameters](#Parameters) |
+| [Symbols](#Symbols)               | [Property](#Property)   | [Enum](#Enum) |
+| [Acronyms](#Acronyms)             | [Method](#Method)       | [File](#File)
+| [Namespace](#Namespace)           | [Condition](#Condition) | [Namespace](#Namespace)
+| [Class](#Class)                   | [Switch](#Switch)       | [Declaration](#Declaration)
+| [Struct](#Struct)                 |                         | [Comment](#Comment)
+| [Interface](#Interface)           |
+| [Enum](#Enum)                     |
+| [Field](#Field)                   |
+| [Property](#Property)             |
+| [Method](#Method)                 |
+| [Local variable](#Local-variable) |
+| [Parameters](#Parameters)         |
+| [Event](#Event)                   |
 
 [Definition](#Definition)
 
