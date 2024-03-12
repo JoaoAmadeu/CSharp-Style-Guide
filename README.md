@@ -145,7 +145,7 @@ public struct Coin
 <h2 id="name-interface"> Interface </h2>
 
 ✔️ **Always** the name should be an adjective, ending with -able or -ible, whenever the interface provides a capability.  
-    (exception) if the rule above is not possible, it should be a noun.
+    <sub>exception</sub> if the rule above is not possible, it should be a noun.  
 ✔️ **Always** precede with a capital i.  
 ✔️ **Always** use `PascalCase`.
 
@@ -156,14 +156,12 @@ public interface IDamageable
 }
 ```
 
----
+<h2 id="name-enum"> Enum </h2>
 
-## [Enum](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-- **always** the name should be a singular type name.
+✔️ **Always** the name should be a singular type name.
     - except if marked with the `System.FlagsAttribute`. It should be pluralized, as these may represent more than one value.
-- **never** use prefix or suffix.
-- **always** use `PascalCase`.
+❌ **Never** use prefix or suffix.
+✔️ **Always** use `PascalCase`.
 
 ```csharp
 public enum Verticality
@@ -181,8 +179,6 @@ public enum Colors
     Yellow,
 }
 ```
-
----
 
 ## [Field](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
 
