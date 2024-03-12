@@ -12,6 +12,8 @@ This coding style is based on the following guidelines:
 
 <font color='red'>This text tried the font tag</font>
 
+<font color='red'>jabiraba</font>
+
 # Index
 
 [Naming](#Naming)
