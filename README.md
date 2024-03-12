@@ -14,6 +14,8 @@ This coding style is based on the following guidelines:
 
 <font color='red'>jabiraba</font>
 
+Markup: [heading-1](#heading-1 "Goto heading-1")
+
 ===
 
 # Index
