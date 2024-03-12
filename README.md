@@ -84,11 +84,12 @@ private int _days-of-the-week;
 public string johnMaryAndSusan;
 ```
 
-## Acronyms
+<h2 id="name-acronyms"> Acronyms </h2>
 
-- **always** capitalize only the first letter and only when it’s appropriate:
+✔️ **Always** capitalize only the first letter and only when it’s appropriate.
 
 ```csharp
+// Allowed
 public string FbiText
 {
     get => "FBI";
@@ -98,6 +99,7 @@ private int faq;
 ```
 
 ```csharp
+// Not allowed
 public string FBIText
 {
     get => "FBI";
@@ -106,10 +108,9 @@ public string FBIText
 private int Faq;
 ```
 
+<h2 id="name-namespace"> Namespace </h2>
 
-## [Namespace](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-- **always** use `PascalCase`.
+✔️ **Always** use `PascalCase`.
 
 ```csharp
 public namespace Package.LastRow
@@ -118,10 +119,10 @@ public namespace Package.LastRow
 }
 ```
 
-## [Class](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+<h2 id="name-class"> Class </h2>
 
-- **always** the name should be a noun, as it represent a thing or an object.
-- **always** use `PascalCase`.
+✔️ **Always** the name should be a noun, as it represents a thing or an object.  
+✔️ **Always** use `PascalCase`.
 
 ```csharp
 public class Tree
@@ -130,11 +131,9 @@ public class Tree
 }
 ```
 
----
+<h2 id="name-struct"> Struct </h2>
 
-## [Struct](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-- **always** follow the same rules as `class`.
+✔️ **Always** follows the same rules as `class`.
 
 ```csharp
 public struct Coin
@@ -143,14 +142,12 @@ public struct Coin
 }
 ```
 
----
+<h2 id="name-interface"> Interface </h2>
 
-## [Interface](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
-
-- **always** the name should be an adjective, ending with -able or -ible, whenever the interface provides a capability.
-    - except if the rule above is not possible, it should be a noun.
-- **always** precede with a capital i.
-- **always** use `PascalCase`.
+✔️ **Always** the name should be an adjective, ending with -able or -ible, whenever the interface provides a capability.  
+    (exception) if the rule above is not possible, it should be a noun.
+✔️ **Always** precede with a capital i.  
+✔️ **Always** use `PascalCase`.
 
 ```csharp
 public interface IDamageable
