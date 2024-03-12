@@ -19,6 +19,9 @@ Markup: [heading-1](#heading-1 "Goto heading-1")
 Markup : [text goes here](#section_name)
           section_title<a name="section_name"></a>    
 
+<h3>HTML</h3>
+<p> Some HTML code here </p>
+
 ===
 
 # Index
