@@ -28,7 +28,7 @@ This coding style is based on the following guidelines:
 
 # Naming
 
-<h2 id="name-general" align="right"> General </h2>
+<h2 id="name-general"> General </h2>
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
@@ -54,8 +54,8 @@ public class SchoolGeo
 public void PgDn () {}
 ```
 
-<div align="right">
-<h2 id="name-symbols"> Symbols </h2>
+<div>
+<h2 id="name-symbols"> Symbols </h2> <div align="right"> top </div>
 </div>
 
 ❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
