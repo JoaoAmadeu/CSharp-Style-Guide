@@ -55,7 +55,7 @@ public void PgDn () {}
 ```
 
 <div>
-<h2 id="name-symbols"> Symbols </h2> <div align="right"> top </div>
+<h2 id="name-symbols"> Symbols </h2> <span align="right"> top </span>
 </div>
 
 ❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
