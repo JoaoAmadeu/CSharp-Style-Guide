@@ -22,7 +22,6 @@ Markup : [text goes here](#section_name)
 <h3>HTML</h3>
 <p> Some HTML code here </p>
 
-<span class="pl-k">var</span>
 
 ===
 
@@ -102,10 +101,10 @@ Markup : [text goes here](#section_name)
 
 ## General
 
-<ul>
-<li>sublist</li>
-<li>sublist</li>
-</ul>
+<sup> this text </sup>
+
+<p>A paragraph
+with two lines.</p>
 
 ❌ **never** abbreviate, unless it’s math.
 +
@@ -131,7 +130,6 @@ public class SchoolGeo
 
 public void PgDn () {}
 ```
-<sup> this text </sup>
 ---
 
 ## Symbols
