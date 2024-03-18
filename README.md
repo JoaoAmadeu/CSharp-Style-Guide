@@ -10,22 +10,22 @@ This coding style is based on the following guidelines:
 
 # Index
 
-| [Naming](#Naming)				| [Braces](#Braces) 		 | [Practices](#Practices) 		|
-| :---						| :---             	         | :---          			|
-| [🔗](#1-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
-| [🔗](#1-symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
-| [🔗](#1-acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
-| [🔗](#1-namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
-| [🔗](#1-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
-| [🔗](#1-struct) Struct			|                         	 | [Comment](#practice-comment)		|
-| [🔗](#1-interface) Interface		|				 | [Definition](#practice-definition)	|
-| [🔗](#1-enum) Enum				|				 | [Event](#practice-event)		|
-| [🔗](#1-field) Field			|				 | [String](#practice-string)		|
-| [🔗](#1-property) Property			|				 | [Linq](#practice-linq)		|
-| [🔗](#1-method) Method			|				 | [Property](#practice-property)	|
-| [🔗](#1-local-variable) Local variable	|				 | [Switch](#practice-switch)		|
-| [🔗](#1-parameters) Parameters		|
-| [🔗](#1-event) Event			|
+| [Naming](#Naming)				| [Braces](#Braces)		| [Practices](#Practices)		|
+| :---						| :---				| :---					|
+| [🔗](#1-general) General			| [🔗](#2-general) General	| [🔗](#3-parameters) Parameters	|
+| [🔗](#1-symbols) Symbols			| [🔗](#2-property) Property	| [🔗](#3-enum) Enum			|
+| [🔗](#1-acronyms) Acronyms			| [🔗](#2-method) Method	| [🔗](#3-file) File			|
+| [🔗](#1-namespace) Namespace			| [🔗](#2-condition) Condition	| [🔗](#3-namespace) Namespace		|
+| [🔗](#1-class) Class				| [🔗](#2-switch) Switch	| [🔗](#3-declaration) Declaration	|
+| [🔗](#1-struct) Struct			|				| [🔗](#3-comment) Comment		|
+| [🔗](#1-interface) Interface			|				| [🔗](#3-definition) Definition	|
+| [🔗](#1-enum) Enum				|				| [🔗](#3-event) Event			|
+| [🔗](#1-field) Field				|				| [🔗](#3-string) String		|
+| [🔗](#1-property) Property			|				| [🔗](#3-linq) Linq			|
+| [🔗](#1-method) Method			|				| [🔗](#3-property) Property		|
+| [🔗](#1-local-variable) Local variable	|				| [🔗](#3-switch) Switch		|
+| [🔗](#1-parameters) Parameters		|				|					|
+| [🔗](#1-event) Event				|				|					|
 
 # Naming
 
@@ -286,7 +286,7 @@ public UnityEvent<int> OnDisabled;
 
 # Braces
 
-<h2 name="brace-general"> General </h2>
+## 2. General
 
 ✔️ **Always** put braces alone on a new line, for the following: `class`, `struct`, `interface`, `namespace`.
 
@@ -309,7 +309,7 @@ public namespace Vehicles.FourWheels
 
 ```
 
-## [Property](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 2. Property
 
 - **always** put braces on a new line alone
 
@@ -344,7 +344,7 @@ public string Name {
 
 ---
 
-## [Method](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 2. Method
 
 - **always** put braces on a new line
 - **always** use empty braces on the same line of the method declaration.
@@ -370,7 +370,7 @@ protected virtual void CreateAttachment ()
 
 ---
 
-## [Condition](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 2. Condition
 
 - **always** use braces on a new line alone, if writing more than one statement.
 - **never** omit braces, if using more than one statement after a condition.
@@ -422,7 +422,7 @@ if (table == null)
 
 ---
 
-## [Switch](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 2. Switch
 
 - **always** use the first and last brace on a new line alone.
 - **always** omit braces. Leave an empty line between `case`.
@@ -463,9 +463,9 @@ switch (condition) {
 
 ---
 
-# [Practices](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+# Practices
 
-## Parameters
+## 3. Parameters
 
 - favor using `var`.
 - **always** use `this` to avoid ambiguity between members and local variables.
@@ -520,7 +520,7 @@ public class Train ()
 
 ---
 
-## [Enum](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. Enum
 
 - favor declaring the member `None`, with a initial value of zero.
 
@@ -537,7 +537,7 @@ public enum Side
 
 ---
 
-## [File](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. File
 
 - Column limit: 120.
 - Indentation must be the size of four spaces.
@@ -547,7 +547,7 @@ public enum Side
 
 ---
 
-## [Namespace](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. Namespace
 
 - **always** import at the top of the file, outside the declaration of any `namespace`.
 - **always** put `System.*` namespaces on top of all the others.
@@ -556,7 +556,7 @@ public enum Side
 
 ---
 
-## [Declaration](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. Declaration
 
 - **always** match the source file’s name with the `MonoBehaviour` declared inside of it.
 - **always** declare only one structure per file.
@@ -567,7 +567,7 @@ public enum Side
 
 ---
 
-## [Comment](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. Comment
 
 - **Always** use `///` to produce comments in classes and its members. It should automatically create a `<summary>` tag or `<parameter>` and `<return>`, if necessary.
 - favor using the `[ToolTip]` attribute, as it will create both editor and XML comment.
@@ -586,7 +586,7 @@ public class Scenario
 
 ---
 
-## [Definition](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. Definition
 
 - Never use `new()`, if the type is not explicit on the left-hand side.
 
@@ -608,7 +608,7 @@ private List<int> manyNumbers = new();
 
 ---
 
-## [Event](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. Event
 
 - favor using `event` for callbacks.
     - except when exposing to the editor, then use `UnityEvent`.
@@ -616,7 +616,7 @@ private List<int> manyNumbers = new();
 
 ---
 
-## [String](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. String
 
 - string interpolation = $””
 - favor using the `+` operator, to increase readibility.
@@ -635,7 +635,7 @@ public string introText = ""
 
 ---
 
-## [Linq](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. LINQ
 
 - favor using it when handling collections.
 - **always** use only one type: keywords or methods
@@ -646,7 +646,7 @@ as select
 
 ---
 
-# [Property](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. Property
 
 - avoid auto-Implemented properties, because Unity editor can’t display the anonymous field.
     - Instead, explicitly declare the field for the property.
@@ -671,7 +671,7 @@ public bool IsBoolean { get; set; }
 
 ---
 
-## [Switch](https://www.notion.so/C-Style-Guide-9febc21f7cdc4ee08188da425946dfa3?pvs=21)
+## 3. Switch
 
 - always implement default, to handle unknown cases.
 - always leave an explicit comment, when falling through.
