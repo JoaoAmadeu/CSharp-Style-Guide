@@ -87,13 +87,13 @@ public string johnMaryAndSusan;
 
 ## 1. Acronyms
 
-✔️ **Always** capitalize only the first letter and only when it’s appropriate.
+✔️ **Always** capitalize the first letter and **only** when it’s appropriate.
 
 ```csharp
 // Allowed
 public string FbiText
 {
-    get => "FBI";
+    get {return "FBI";}
 }
 
 private int faq;
@@ -103,7 +103,7 @@ private int faq;
 // Not allowed
 public string FBIText
 {
-    get => "FBI";
+    get {return "FBI";}
 }
 
 private int Faq;
@@ -134,7 +134,7 @@ public class Tree
 
 ## 1. Struct
 
-✔️ **Always** follows the same rules as `class`.
+✔️ **Always** follow the same rules as `class`.
 
 ```csharp
 public struct Coin
@@ -207,12 +207,12 @@ private bool hasBullets;
 ```csharp
 public bool IsHeavy
 {
-    get => false;
+    get {return false;}
 }
 
 protected string Name
 {
-    get {return "none"}
+    get {return "none";}
 }
 ```
 
@@ -233,7 +233,6 @@ protected int GetNumber ()
 }
 ```
 
-
 ## 1. Local variable
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
@@ -253,7 +252,7 @@ protected int GetNumber ()
          Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
 ✔️ **Always** use `camelCase`.  
 ✔️ **Always** a single letter, when inside a `for`.  
-  •  Avoid using single letters, when lambdas have more than one parameter.
+  •  Avoid using single letters on anonymous methods, when it have more than one parameter.
 
 ```csharp
 // Allowed
@@ -374,8 +373,6 @@ protected virtual void CreateAttachment ()
 {
 }
 ```
-
----
 
 ## 2. Condition
 
@@ -556,38 +553,32 @@ Only on anonymous methods, never on member declaration
 
 ## 3. File
 
-- Column limit: 120.
-- Indentation must be the size of four spaces.
-- Tab must create four spaces.
+  •  Column limit: 120.
+  •  Indentation must be the size of four spaces.
+  •  Tab must create four spaces.
 ✔️ **Always** end the file with an empty single line.
-- **never** follow an empty line, with another empty line.
-
----
+❌ **Never** follow an empty line, with another empty line.
 
 ## 3. Namespace
 
 ✔️ **Always** import at the top of the file, outside the declaration of any `namespace`.
 ✔️ **Always** put `System.*` namespaces on top of all the others.
-- **always** sort them alphabetically.
-- **never** leave unused namespaces.
-
----
+✔️ **Always** sort them alphabetically.
+❌ **Never** leave unused namespaces.
 
 ## 3. Declaration
 
 ✔️ **Always** match the source file’s name with the `MonoBehaviour` declared inside of it.
 ✔️ **Always** declare only one structure per file.
-- **never** declare an `enum`, `struct` or `class` inside another class, unless not public.
-- favor declaring `class` instead of `struct`.
+❌ **Never** declare an `enum`, `struct` or `class` inside another class, unless not public.
+  •  favor declaring `class` instead of `struct`.
 ✔️ **Always** declare fields at the top of the class.
-- avoid using public fields.
-
----
+  •  avoid using public fields.
 
 ## 3. Comment
 
 ✔️ **Always** use `///` to produce comments in classes and its members. It should automatically create a `<summary>` tag or `<parameter>` and `<return>`, if necessary.
-- favor using the `[ToolTip]` attribute, as it will create both editor and XML comment.
+  •  favor using the `[ToolTip]` attribute, as it will create both editor and XML comment.
 
 ```csharp
 /// <summary>
@@ -612,14 +603,14 @@ private List<int> manyNumbers = new();
 
 {
     List<int> localNumbers = null;
-		localNumbers = new List<int>();
+    localNumbers = new List<int>();
 }
 ```
 
 ```csharp
 {
     List<int> localNumbers = null;
-		localNumbers = new();
+    localNumbers = new();
 }
 ```
 
@@ -714,21 +705,16 @@ switch (otherCondition)
 ```csharp
 // TODO
 
-//markdown - implement 'top' button in each header, that will bring the view to the index header
+// Markdown
+// Implement the 'top' button in each header, that will bring the view to the index header
 
 // Using classes to nest variables or to simply enjoy of the editor folding option
-
+// UnityEvent + C# event
 // ? operator when calling methods from objects
 
 // Nesting parameters to the same identation of the first one, increase readibility
 
 // Properties vs methods of Get and Set
-
-// When using UnityEvent or any other callback that is not an event, you can 
-// hide the member and create methods to call, register and unregister to it.
-// It's a more extensive approach but it will allow proper encapsulation
-
-// Singleton boilerplate
 
 // foreach (var item in List)
 
