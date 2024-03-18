@@ -12,24 +12,24 @@ This coding style is based on the following guidelines:
 
 | [Naming](#Naming)				| [Braces](#Braces) 		 | [Practices](#Practices) 		|
 | :---						| :---             	         | :---          			|
-| [🔗](#name-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
-| [🔗](#name-symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
-| [🔗](#name-acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
-| [🔗](#name-namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
-| [🔗](#name-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
-| [🔗](#name-struct) Struct			|                         	 | [Comment](#practice-comment)		|
-| [🔗](#name-interface) Interface		|				 | [Definition](#practice-definition)	|
-| [🔗](#name-enum) Enum				|				 | [Event](#practice-event)		|
-| [🔗](#name-field) Field			|				 | [String](#practice-string)		|
-| [🔗](#name-property) Property			|				 | [Linq](#practice-linq)		|
-| [🔗](#name-method) Method			|				 | [Property](#practice-property)	|
-| [🔗](#name-local-variable) Local variable	|				 | [Switch](#practice-switch)		|
-| [🔗](#name-parameters) Parameters		|
-| [🔗](#name-event) Event			|
+| [🔗](#1-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
+| [🔗](#1-symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
+| [🔗](#1-acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
+| [🔗](#1-namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
+| [🔗](#1-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
+| [🔗](#1-struct) Struct			|                         	 | [Comment](#practice-comment)		|
+| [🔗](#1-interface) Interface		|				 | [Definition](#practice-definition)	|
+| [🔗](#1-enum) Enum				|				 | [Event](#practice-event)		|
+| [🔗](#1-field) Field			|				 | [String](#practice-string)		|
+| [🔗](#1-property) Property			|				 | [Linq](#practice-linq)		|
+| [🔗](#1-method) Method			|				 | [Property](#practice-property)	|
+| [🔗](#1-local-variable) Local variable	|				 | [Switch](#practice-switch)		|
+| [🔗](#1-parameters) Parameters		|
+| [🔗](#1-event) Event			|
 
 # Naming
 
-<h2 id="name-general"> General </h2>
+## 1 General
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
@@ -55,7 +55,7 @@ public class SchoolGeo
 public void PgDn () {}
 ```
 
-<h2 id="name-symbols"> Symbols </h2>
+## 1 Symbols
 
 ❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
 ✔️ **Always** use only letters.  
@@ -85,7 +85,7 @@ private int _days-of-the-week;
 public string johnMaryAndSusan;
 ```
 
-<h2 id="name-acronyms"> Acronyms </h2>
+## 1 Acronyms
 
 ✔️ **Always** capitalize only the first letter and only when it’s appropriate.
 
