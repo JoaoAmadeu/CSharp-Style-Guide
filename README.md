@@ -12,20 +12,20 @@ This coding style is based on the following guidelines:
 
 | [Naming](#Naming)				| [Braces](#Braces) 		 | [Practices](#Practices) 		|
 | :---						| :---             	         | :---          			|
-| [🔗](#1.-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
-| [🔗](#1.-symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
-| [🔗](#1.-acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
-| [🔗](#1.-namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
-| [🔗](#1.-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
-| [🔗](#1.-struct) Struct			|                         	 | [Comment](#practice-comment)		|
-| [🔗](#1.-interface) Interface		|				 | [Definition](#practice-definition)	|
-| [🔗](#1.-enum) Enum				|				 | [Event](#practice-event)		|
-| [🔗](#1.-field) Field			|				 | [String](#practice-string)		|
-| [🔗](#1.-property) Property			|				 | [Linq](#practice-linq)		|
-| [🔗](#1.-method) Method			|				 | [Property](#practice-property)	|
-| [🔗](#1.-local-variable) Local variable	|				 | [Switch](#practice-switch)		|
-| [🔗](#1.-parameters) Parameters		|
-| [🔗](#1.-event) Event			|
+| [🔗](#1-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
+| [🔗](#1-symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
+| [🔗](#1-acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
+| [🔗](#1-namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
+| [🔗](#1-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
+| [🔗](#1-struct) Struct			|                         	 | [Comment](#practice-comment)		|
+| [🔗](#1-interface) Interface		|				 | [Definition](#practice-definition)	|
+| [🔗](#1-enum) Enum				|				 | [Event](#practice-event)		|
+| [🔗](#1-field) Field			|				 | [String](#practice-string)		|
+| [🔗](#1-property) Property			|				 | [Linq](#practice-linq)		|
+| [🔗](#1-method) Method			|				 | [Property](#practice-property)	|
+| [🔗](#1-local-variable) Local variable	|				 | [Switch](#practice-switch)		|
+| [🔗](#1-parameters) Parameters		|
+| [🔗](#1-event) Event			|
 
 # Naming
 
