@@ -12,10 +12,10 @@ This coding style is based on the following guidelines:
 
 | [Naming](#Naming)				| [Braces](#Braces) 		 | [Practices](#Practices) 		|
 | :---						| :---             	         | :---          			|
-| [🔗](#1-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
-| [🔗](#1-symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
-| [🔗](#1-acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
-| [🔗](#1-namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
+| [🔗](#1.-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
+| [🔗](#1.symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
+| [🔗](#1]acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
+| [🔗](#1\)namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
 | [🔗](#1-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
 | [🔗](#1-struct) Struct			|                         	 | [Comment](#practice-comment)		|
 | [🔗](#1-interface) Interface		|				 | [Definition](#practice-definition)	|
@@ -29,7 +29,7 @@ This coding style is based on the following guidelines:
 
 # Naming
 
-## 1 General
+## 1. general
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
@@ -55,7 +55,7 @@ public class SchoolGeo
 public void PgDn () {}
 ```
 
-## 1 Symbols
+## 1.symbols
 
 ❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
 ✔️ **Always** use only letters.  
@@ -85,7 +85,7 @@ private int _days-of-the-week;
 public string johnMaryAndSusan;
 ```
 
-## 1 Acronyms
+## 1]acronyms
 
 ✔️ **Always** capitalize only the first letter and only when it’s appropriate.
 
@@ -109,7 +109,7 @@ public string FBIText
 private int Faq;
 ```
 
-<h2 id="name-namespace"> Namespace </h2>
+## 1\)namespace
 
 ✔️ **Always** use `PascalCase`.
 
