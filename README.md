@@ -293,7 +293,7 @@ public UnityEvent<int> OnDisabled;
 
 ## 2. General
 
-✔️ **Always** put braces alone on a new line, for the following: `class`, `struct`, `interface`, `namespace`.
+✔️ **Always** put braces alone on a new line, when declaring types or a namespace.
 
 ```csharp
 public namespace Vehicles.FourWheels
@@ -316,12 +316,14 @@ public namespace Vehicles.FourWheels
 
 ## 2. Property
 
-- **always** put braces on a new line alone
+✔️ **Always** put braces on a new line alone.
+  •  Allowed to use braces on the same line, when the body of the expression is just one statement.
 
 ```csharp
+// Allowed
 public bool IsBoolean
 {
-    get => false;
+    get {return false;}
 }
 
 public string Name
@@ -334,12 +336,12 @@ public string Name
 }
 ```
 
----
-
 ```csharp
-public bool IsBoolean { get => false }
+// Not allowed
+public bool IsBoolean { get {return false;} }
 
-public string Name {
+public string Name
+{
     set {
         id = 0;
         name = value;
@@ -347,14 +349,13 @@ public string Name {
 }
 ```
 
----
-
 ## 2. Method
 
-- **always** put braces on a new line
-- **always** use empty braces on the same line of the method declaration.
+✔️ **Always** put braces on a new line.
+✔️ **Always** use empty braces on the same line of the method declaration, for empty methods.
 
 ```csharp
+// Allowed
 public void NewMethod ()
 {
     Statement();
@@ -364,6 +365,7 @@ protected virtual void CreateAttachment () {}
 ```
 
 ```csharp
+// Not allowed
 public void NewMethod () {
     isBoolean = true;
 }
@@ -377,11 +379,12 @@ protected virtual void CreateAttachment ()
 
 ## 2. Condition
 
-- **always** use braces on a new line alone, if writing more than one statement.
-- **never** omit braces, if using more than one statement after a condition.
-- **never** omit braces, if nesting conditions.
+✔️ **Always** use braces on a new line alone, if writing more than one statement.
+❌ **Never** omit braces, if using more than one statement after a condition.
+❌ **Never** omit braces, if nesting conditions.
 
 ```csharp
+// Allowed
 if (isBoolean == true)
     return;
 
@@ -405,9 +408,8 @@ if (table == null)
 }
 ```
 
----
-
 ```csharp
+// Not allowed
 if (isBoolean == true) {
     Statement();
     return;
@@ -425,15 +427,14 @@ if (table == null)
         ChairStatement();
 ```
 
----
-
 ## 2. Switch
 
-- **always** use the first and last brace on a new line alone.
-- **always** omit braces. Leave an empty line between `case`.
-- **never** use one line `case`.
+✔️ **Always** use the first and last brace on a new line alone.
+✔️ **Always** omit braces. Leave an empty line between each `case`.
+❌ **Never** use one line `case`.
 
 ```csharp
+// Allowed
 switch (condition)
 {
     default:
@@ -445,28 +446,27 @@ switch (condition)
 
     case 1:
         SecondStatement();
-				count++;
+        count++;
         break;
 }
 ```
 
 ```csharp
+// Not allowed
 switch (condition) {
     default:
         Notify();
-    
+
     case 0: Statement(); break;
-    
-        case 1:
-        {
-            SecondStatement();
-            count++;
-            break;
-        }
+
+    case 1:
+    {
+        SecondStatement();
+        count++;
+        break;
+    }
 }
 ```
-
----
 
 # Practices
 
