@@ -65,7 +65,7 @@ public void PgDn () {}
 // Allowed
 public int TwoTimesFour
 {
-    get => 8;
+    get {return 8;}
 }
 
 private int daysOfTheWeek;
@@ -77,7 +77,7 @@ public string johnMarySusan;
 // Not allowed
 public int TwoTimes4
 {
-    get => 8;
+    get {return 8;}
 }
 
 private int _days-of-the-week;
@@ -153,7 +153,12 @@ public struct Coin
 ```csharp
 public interface IDamageable
 {
+    void ReceiveDamage(int power)
+}
 
+public interface IHabitat
+{
+    object GetTurtle()
 }
 ```
 
@@ -207,7 +212,7 @@ public bool IsHeavy
 
 protected string Name
 {
-    get => "none";
+    get {return "none"}
 }
 ```
 
@@ -534,6 +539,9 @@ public enum Side
     Left,
 }
 ```
+## Lambda expression
+
+Only on anonymous methods, never on member declaration
 
 ---
 
