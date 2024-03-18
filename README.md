@@ -13,23 +13,23 @@ This coding style is based on the following guidelines:
 | [Naming](#Naming)				| [Braces](#Braces) 		 | [Practices](#Practices) 		|
 | :---						| :---             	         | :---          			|
 | [🔗](#1.-general) General			| [General](#brace-general)     | [Parameters](#practice-parameters) 	|
-| [🔗](#1.symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
-| [🔗](#1]acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
-| [🔗](#1\)namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
-| [🔗](#1-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
-| [🔗](#1-struct) Struct			|                         	 | [Comment](#practice-comment)		|
-| [🔗](#1-interface) Interface		|				 | [Definition](#practice-definition)	|
-| [🔗](#1-enum) Enum				|				 | [Event](#practice-event)		|
-| [🔗](#1-field) Field			|				 | [String](#practice-string)		|
-| [🔗](#1-property) Property			|				 | [Linq](#practice-linq)		|
-| [🔗](#1-method) Method			|				 | [Property](#practice-property)	|
-| [🔗](#1-local-variable) Local variable	|				 | [Switch](#practice-switch)		|
-| [🔗](#1-parameters) Parameters		|
-| [🔗](#1-event) Event			|
+| [🔗](#1.-symbols) Symbols			| [Property](#brace-property)   | [Enum](#practice-enum) 		|
+| [🔗](#1.-acronyms) Acronyms			| [Method](#brace-method)       | [File](#practice-file)		|
+| [🔗](#1.-namespace) Namespace		| [Condition](#brace-condition) | [Namespace](#practice-namespace)	|
+| [🔗](#1.-class) Class			| [Switch](#brace-switch)       | [Declaration](#practice-declaration)	|
+| [🔗](#1.-struct) Struct			|                         	 | [Comment](#practice-comment)		|
+| [🔗](#1.-interface) Interface		|				 | [Definition](#practice-definition)	|
+| [🔗](#1.-enum) Enum				|				 | [Event](#practice-event)		|
+| [🔗](#1.-field) Field			|				 | [String](#practice-string)		|
+| [🔗](#1.-property) Property			|				 | [Linq](#practice-linq)		|
+| [🔗](#1.-method) Method			|				 | [Property](#practice-property)	|
+| [🔗](#1.-local-variable) Local variable	|				 | [Switch](#practice-switch)		|
+| [🔗](#1.-parameters) Parameters		|
+| [🔗](#1.-event) Event			|
 
 # Naming
 
-## 1. general
+## 1. General
 
 ❌ **Never** abbreviate, unless it’s math.  
 ✔️ **Always** declare the level modifiers.  
@@ -55,7 +55,7 @@ public class SchoolGeo
 public void PgDn () {}
 ```
 
-## 1.symbols
+## 1. Symbols
 
 ❌ **Never** use underscores `_`, dashes `-` or numbers `123`.  
 ✔️ **Always** use only letters.  
@@ -85,7 +85,7 @@ private int _days-of-the-week;
 public string johnMaryAndSusan;
 ```
 
-## 1]acronyms
+## 1. Acronyms
 
 ✔️ **Always** capitalize only the first letter and only when it’s appropriate.
 
@@ -109,7 +109,7 @@ public string FBIText
 private int Faq;
 ```
 
-## 1\)namespace
+## 1. Namespace
 
 ✔️ **Always** use `PascalCase`.
 
@@ -120,7 +120,7 @@ public namespace Package.LastRow
 }
 ```
 
-<h2 id="name-class"> Class </h2>
+## 1. Class
 
 ✔️ **Always** the name should be a noun, as it represents a thing or an object.  
 ✔️ **Always** use `PascalCase`.
@@ -132,7 +132,7 @@ public class Tree
 }
 ```
 
-<h2 id="name-struct"> Struct </h2>
+## 1. Struct
 
 ✔️ **Always** follows the same rules as `class`.
 
@@ -143,7 +143,7 @@ public struct Coin
 }
 ```
 
-<h2 id="name-interface"> Interface </h2>
+## 1. Interface
 
 ✔️ **Always** the name should be an adjective, ending with `-able` or `-ible`, whenever the interface provides a capability.  
          Except if the rule above is not possible, then it should be a noun.  
@@ -157,7 +157,7 @@ public interface IDamageable
 }
 ```
 
-<h2 id="name-enum"> Enum </h2>
+## 1. Enum
 
 ✔️ **Always** the name should be a singular type name.  
          Except if marked with the `System.FlagsAttribute`, then it should be pluralized, as these may represent more than one value.  
@@ -181,7 +181,7 @@ public enum Colors
 }
 ```
 
-<h2 id="name-field"> Field </h2>
+## 1. Field
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
          Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
@@ -193,7 +193,7 @@ public int count;
 private bool hasBullets;
 ```
 
-<h2 id="name-property"> Property </h2>
+## 1. Property
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
          Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
@@ -211,7 +211,7 @@ protected string Name
 }
 ```
 
-<h2 id="name-method"> Method </h2>
+## 1. Method
 
 ✔️ **Always** the name should contain a verb, as it’s used to make an object take action.  
 ✔️ **Always** use `PascalCase`.
@@ -229,7 +229,7 @@ protected int GetNumber ()
 ```
 
 
-<h2 name="name-local-variable"> Local variable </h2>
+## 1. Local variable
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
          Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
@@ -242,7 +242,7 @@ protected int GetNumber ()
 }
 ```
 
-<h2 name="name-parameters"> Parameters </h2>
+## 1. Parameters
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
          Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
@@ -270,7 +270,7 @@ for (int index = 0; index < 10; index++) {}
 RegisterEvent ((x,y) => speed = x.heigth * y);
 ```
 
-<h2 name="name-event"> Event </h2>
+## 1. Event
 
 ✔️ **Always** the name should be prefixed with `on`.  
          if invoked after its represented action, follow with a verb on simple past.  
