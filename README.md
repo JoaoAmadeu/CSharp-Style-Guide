@@ -470,25 +470,45 @@ switch (condition) {
 
 # Practices
 
-## 3. Parameters
+## 3. Var
 
-- favor using `var`.
-- **always** use `this` to avoid ambiguity between members and local variables.
-- avoid `var` if it makes the type ambiguous.
+❌ **Never** use it, if it makes the type ambiguous.
+  •  favor using `var` at all times.
 
 ```csharp
+// Allowed
 {
-    bool willExplode = false;
+    Transform position = StartMovement();
     var doubleValue = (double)(2 * 2);
     var rock = material as Rock;
-    var text = material.ToString();
     
-    if (Raycast(ray, out var hit))
+    if (Raycast (ray, out var raycastResult))
     {
-        Debug.Log(hit);
+        Debug.Log (raycastResult);
     }
 }
+```
 
+```csharp
+// Not allowed
+{
+    var position = StartMovement();
+    var doubleValue = 2 * 2;
+    var rock = material;
+
+    if (Raycast (ray, out var output))
+    {
+        Debug.Log (output);
+    }
+}
+```
+
+## 3. Parameters
+
+✔️ **Always** use `this` to avoid ambiguity between members and local variables.
+
+```csharp
+// Allowed
 public class Train ()
 {
     private float speed;
@@ -501,17 +521,7 @@ public class Train ()
 ```
 
 ```csharp
-{
-    var doubleValue = 2 * 2;
-    var rock = material;
-    var text = StartMovement();
-
-    if (Raycast(ray, out var found))
-    {
-        Debug.Log(found);
-    }
-}
-
+// Not allowed
 public class Train ()
 {
     private float speed;
@@ -523,11 +533,9 @@ public class Train ()
 }
 ```
 
----
-
 ## 3. Enum
 
-- favor declaring the member `None`, with a initial value of zero.
+  •  favor declaring the member `None`, with a initial value of zero.
 
 ```csharp
 public enum Side
@@ -539,7 +547,8 @@ public enum Side
     Left,
 }
 ```
-## Lambda expression
+
+## 3. Lambda expression
 
 Only on anonymous methods, never on member declaration
 
@@ -550,15 +559,15 @@ Only on anonymous methods, never on member declaration
 - Column limit: 120.
 - Indentation must be the size of four spaces.
 - Tab must create four spaces.
-- **always** end the file with an empty single line.
+✔️ **Always** end the file with an empty single line.
 - **never** follow an empty line, with another empty line.
 
 ---
 
 ## 3. Namespace
 
-- **always** import at the top of the file, outside the declaration of any `namespace`.
-- **always** put `System.*` namespaces on top of all the others.
+✔️ **Always** import at the top of the file, outside the declaration of any `namespace`.
+✔️ **Always** put `System.*` namespaces on top of all the others.
 - **always** sort them alphabetically.
 - **never** leave unused namespaces.
 
@@ -566,18 +575,18 @@ Only on anonymous methods, never on member declaration
 
 ## 3. Declaration
 
-- **always** match the source file’s name with the `MonoBehaviour` declared inside of it.
-- **always** declare only one structure per file.
+✔️ **Always** match the source file’s name with the `MonoBehaviour` declared inside of it.
+✔️ **Always** declare only one structure per file.
 - **never** declare an `enum`, `struct` or `class` inside another class, unless not public.
 - favor declaring `class` instead of `struct`.
-- **always** declare fields at the top of the class.
+✔️ **Always** declare fields at the top of the class.
 - avoid using public fields.
 
 ---
 
 ## 3. Comment
 
-- **Always** use `///` to produce comments in classes and its members. It should automatically create a `<summary>` tag or `<parameter>` and `<return>`, if necessary.
+✔️ **Always** use `///` to produce comments in classes and its members. It should automatically create a `<summary>` tag or `<parameter>` and `<return>`, if necessary.
 - favor using the `[ToolTip]` attribute, as it will create both editor and XML comment.
 
 ```csharp
@@ -646,7 +655,7 @@ public string introText = ""
 ## 3. LINQ
 
 - favor using it when handling collections.
-- **always** use only one type: keywords or methods
+✔️ **Always** use only one type: keywords or methods
 
 ```csharp
 as select
@@ -681,8 +690,8 @@ public bool IsBoolean { get; set; }
 
 ## 3. Switch
 
-- always implement default, to handle unknown cases.
-- always leave an explicit comment, when falling through.
+✔️ **Always** implement default, to handle unknown cases.
+✔️ **Always** leave an explicit comment, when falling through.
 
 ```csharp
 switch (otherCondition)
