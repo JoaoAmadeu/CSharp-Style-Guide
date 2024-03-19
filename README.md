@@ -10,22 +10,22 @@ This coding style is based on the following guidelines:
 
 # Index
 
-| [Naming](#Naming)				| [Braces](#Braces)		| [Practices](#Practices)		|
-| :---						| :---				| :---					|
-| [🔗](#1-general) General			| [🔗](#2-general) General	| [🔗](#3-parameters) Parameters	|
-| [🔗](#1-symbols) Symbols			| [🔗](#2-property) Property	| [🔗](#3-enum) Enum			|
-| [🔗](#1-acronyms) Acronyms			| [🔗](#2-method) Method	| [🔗](#3-file) File			|
-| [🔗](#1-namespace) Namespace			| [🔗](#2-condition) Condition	| [🔗](#3-namespace) Namespace		|
-| [🔗](#1-class) Class				| [🔗](#2-switch) Switch	| [🔗](#3-declaration) Declaration	|
-| [🔗](#1-struct) Struct			|				| [🔗](#3-comment) Comment		|
-| [🔗](#1-interface) Interface			|				| [🔗](#3-definition) Definition	|
-| [🔗](#1-enum) Enum				|				| [🔗](#3-event) Event			|
-| [🔗](#1-field) Field				|				| [🔗](#3-string) String		|
-| [🔗](#1-property) Property			|				| [🔗](#3-linq) Linq			|
-| [🔗](#1-method) Method			|				| [🔗](#3-property) Property		|
-| [🔗](#1-local-variable) Local variable	|				| [🔗](#3-switch) Switch		|
-| [🔗](#1-parameters) Parameters		|				|					|
-| [🔗](#1-event) Event				|				|					|
+| [Naming](#Naming)				            | [Braces](#Braces)		| [Practices](#Practices)		|
+| :---                                       | :---				| :---					|
+| [🔗](#1-general) General                  | [🔗](#2-general) General	| [🔗](#3-parameters) Parameters	|
+| [🔗](#1-symbols) Symbols                  | [🔗](#2-property) Property	| [🔗](#3-enum) Enum			|
+| [🔗](#1-acronyms) Acronyms                | [🔗](#2-method) Method	| [🔗](#3-file) File			|
+| [🔗](#1-namespace) Namespace              | [🔗](#2-condition) Condition	| [🔗](#3-namespace) Namespace		|
+| [🔗](#1-class) Class                      | [🔗](#2-switch) Switch	| [🔗](#3-declaration) Declaration	|
+| [🔗](#1-struct) Struct                    |				| [🔗](#3-comment) Comment		|
+| [🔗](#1-interface) Interface              |				| [🔗](#3-definition) Definition	|
+| [🔗](#1-enum) Enum                        |				| [🔗](#3-event) Event			|
+| [🔗](#1-field) Field                      |				| [🔗](#3-string) String		|
+| [🔗](#1-property) Property                |				| [🔗](#3-linq) Linq			|
+| [🔗](#1-method) Method                    |				| [🔗](#3-property) Property		|
+| [🔗](#1-local-variable) Local variable    |				| [🔗](#3-switch) Switch		|
+| [🔗](#1-parameters) Parameters            |				|					|
+| [🔗](#1-event) Event                      |				|					|
 
 # Naming
 
@@ -315,7 +315,7 @@ public namespace Vehicles.FourWheels
 
 ## 2. Property
 
-✔️ **Always** put braces on a new line alone.
+✔️ **Always** put braces on a new line alone.  
   •  Allowed to use braces on the same line, when the body of the expression is just one statement.
 
 ```csharp
@@ -350,7 +350,7 @@ public string Name
 
 ## 2. Method
 
-✔️ **Always** put braces on a new line.
+✔️ **Always** put braces on a new line.  
 ✔️ **Always** use empty braces on the same line of the method declaration, for empty methods.
 
 ```csharp
@@ -376,8 +376,8 @@ protected virtual void CreateAttachment ()
 
 ## 2. Condition
 
-✔️ **Always** use braces on a new line alone, if writing more than one statement.
-❌ **Never** omit braces, if using more than one statement after a condition.
+✔️ **Always** use braces on a new line alone, if writing more than one statement.  
+❌ **Never** omit braces, if using more than one statement after a condition.  
 ❌ **Never** omit braces, if nesting conditions.
 
 ```csharp
@@ -426,8 +426,8 @@ if (table == null)
 
 ## 2. Switch
 
-✔️ **Always** use the first and last brace on a new line alone.
-✔️ **Always** omit braces. Leave an empty line between each `case`.
+✔️ **Always** use the first and last brace on a new line alone.  
+✔️ **Always** omit braces. Leave an empty line between each `case`.  
 ❌ **Never** use one line `case`.
 
 ```csharp
@@ -469,7 +469,7 @@ switch (condition) {
 
 ## 3. Var
 
-❌ **Never** use it, if it makes the type ambiguous.
+❌ **Never** use it, if it makes the type ambiguous.  
   •  favor using `var` at all times.
 
 ```csharp
@@ -553,31 +553,31 @@ Only on anonymous methods, never on member declaration
 
 ## 3. File
 
-  •  Column limit: 120.
-  •  Indentation must be the size of four spaces.
-  •  Tab must create four spaces.
-✔️ **Always** end the file with an empty single line.
+  •  Column limit: 120.  
+  •  Indentation must be the size of four spaces.  
+  •  Tab must create four spaces.  
+✔️ **Always** end the file with an empty single line.  
 ❌ **Never** follow an empty line, with another empty line.
 
 ## 3. Namespace
 
-✔️ **Always** import at the top of the file, outside the declaration of any `namespace`.
-✔️ **Always** put `System.*` namespaces on top of all the others.
-✔️ **Always** sort them alphabetically.
+✔️ **Always** import at the top of the file, outside the declaration of any `namespace`.  
+✔️ **Always** put `System.*` namespaces on top of all the others.  
+✔️ **Always** sort them alphabetically.  
 ❌ **Never** leave unused namespaces.
 
 ## 3. Declaration
 
-✔️ **Always** match the source file’s name with the `MonoBehaviour` declared inside of it.
-✔️ **Always** declare only one structure per file.
-❌ **Never** declare an `enum`, `struct` or `class` inside another class, unless not public.
-  •  favor declaring `class` instead of `struct`.
-✔️ **Always** declare fields at the top of the class.
+✔️ **Always** match the source file’s name with the `MonoBehaviour` declared inside of it.  
+✔️ **Always** declare only one structure per file.  
+❌ **Never** declare an `enum`, `struct` or `class` inside another class, unless not public.  
+  •  favor declaring `class` instead of `struct`.  
+✔️ **Always** declare fields at the top of the class.  
   •  avoid using public fields.
 
 ## 3. Comment
 
-✔️ **Always** use `///` to produce comments in classes and its members. It should automatically create a `<summary>` tag or `<parameter>` and `<return>`, if necessary.
+✔️ **Always** use `///` to produce comments in classes and its members. It should automatically create a `<summary>` tag or `<parameter>` and `<return>`, if necessary.  
   •  favor using the `[ToolTip]` attribute, as it will create both editor and XML comment.
 
 ```csharp
