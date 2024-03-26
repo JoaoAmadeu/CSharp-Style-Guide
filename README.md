@@ -147,7 +147,7 @@ public struct Coin
 
 ✔️ **Always** the name should be an adjective, ending with `-able` or `-ible`, whenever the interface provides a capability.  
         •  Except if the rule above is not possible, then it should be a noun.  
-✔️ **Always** precede with a capital i `I`.  
+✔️ **Always** precede with an `I` (capital i).  
 ✔️ **Always** use `PascalCase`.
 
 ```csharp
