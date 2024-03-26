@@ -146,7 +146,7 @@ public struct Coin
 ## 1. Interface
 
 ✔️ **Always** the name should be an adjective, ending with `-able` or `-ible`, whenever the interface provides a capability.  
-         Except if the rule above is not possible, then it should be a noun.  
+      •  Except if the rule above is not possible, then it should be a noun.  
 ✔️ **Always** precede with a capital i `I`.  
 ✔️ **Always** use `PascalCase`.
 
@@ -165,7 +165,7 @@ public interface IHabitat
 ## 1. Enum
 
 ✔️ **Always** the name should be a singular type name.  
-         Except if marked with the `System.FlagsAttribute`, then it should be pluralized, as these may represent more than one value.  
+          •  Except if marked with the `System.FlagsAttribute`, then it should be pluralized, as these may represent more than one value.  
 ❌ **Never** use prefix or suffix.  
 ✔️ **Always** use `PascalCase`.
 
