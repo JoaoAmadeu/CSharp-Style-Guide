@@ -1,6 +1,7 @@
 # C# Style Guide
 
-This coding style is based on the following guidelines:
+This coding style is meant to be used on Unity, since it handle a few specific cases but can be readjusted for other scenarios.
+It is based on the following guidelines:
 
 - [Unity](https://unity.com/how-to/naming-and-code-style-tips-c-scripting-unity)
 - [Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions#style-guidelines)
@@ -532,7 +533,7 @@ public class Train ()
 
 ## 3. Enum
 
-  •  favor declaring the member `None`, with a initial value of zero.
+  •  Favor declaring the member `None`, with a initial value of zero.
 
 ```csharp
 public enum Side
@@ -547,7 +548,8 @@ public enum Side
 
 ## 3. Lambda expression
 
-Only on anonymous methods, never on member declaration
+❌ **Never** on member declaration.
+  •  Allowed on anonymous methods.
 
 ```csharp
 // Allowed
@@ -563,8 +565,6 @@ protected int firstNumber
     get => 1
 }
 ```
-
----
 
 ## 3. File
 
@@ -584,16 +584,16 @@ protected int firstNumber
 ## 3. Declaration
 
 ✔️ **Always** match the source file’s name with the `MonoBehaviour` declared inside of it.  
-✔️ **Always** declare only one structure per file.  
-❌ **Never** declare an `enum`, `struct` or `class` inside another class, unless not public.  
-  •  Favor declaring `class` instead of `struct`.  
+✔️ **Always** declare only one type per file.  
 ✔️ **Always** declare fields at the top of the class.  
-  •  Avoid using public fields.
+  •  Avoid declaring an `enum`, `struct` or `class` inside another class, unless not public.  
+  •  Favor declaring `class` instead of `struct`, when in doubt.  
+  •  Avoid declaring public fields.
 
 ## 3. Comment
 
-✔️ **Always** use `///` to produce comments in classes and its members. It should automatically create a `<summary>` tag or `<parameter>` and `<return>`, if necessary.  
-  •  Favor using the `[ToolTip]` attribute, as it will create both editor and XML comment.
+✔️ **Always** use `///` to produce comments in types and its members. The IDE should automatically handle the tags.
+  •  Favor using the `[ToolTip]` attribute, as it will create both editor and the XML tags.
 
 ```csharp
 /// <summary>
@@ -631,9 +631,22 @@ private List<int> manyNumbers = new();
 
 ## 3. Event
 
-  •  Favor using `event` for callbacks.  
-        •  except when exposing to the editor, then use `UnityEvent`.  
-  •  favor using `System.Action`.
+✔️ **Always** use `event` for callbacks.
+        •  If exposing to the editor, declare a private `UnityEvent` to follow it.
+  •  Favor using `System.Action`.
+
+```csharp
+public event Action OnJump;
+
+[SerializeField]
+private UnityEvent OnJumpEvent;
+
+public void TryJump ()
+{
+    OnJump();
+    OnJumpEvent.Invoke();
+}
+```
 
 ## 3. String
 
@@ -651,12 +664,8 @@ Debug.Log ($"{3.25f:F3});"
 
 ## 3. LINQ
 
-  •  favor using it when handling collections.  
-✔️ **Always** use only one type: keywords or methods
-
-```csharp
-as select
-```
+  •  Favor using it when handling collections.  
+✔️ **Always** use only one type: keywords or methods.
 
 ## 3. Property
 
