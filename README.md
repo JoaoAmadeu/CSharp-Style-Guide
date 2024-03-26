@@ -10,22 +10,22 @@ This coding style is based on the following guidelines:
 
 # Index
 
-| [Naming](#Naming)				            | [Braces](#Braces)		| [Practices](#Practices)		|
-| :---                                       | :---				| :---					|
-| [🔗](#1-general) General                  | [🔗](#2-general) General	| [🔗](#3-parameters) Parameters	|
+| [Naming](#Naming)                          | [Braces](#Braces)		    | [Practices](#Practices)		|
+| :---                                       | :---				            | :---					|
+| [🔗](#1-general) General                  | [🔗](#2-general) General	    | [🔗](#3-parameters) Parameters	|
 | [🔗](#1-symbols) Symbols                  | [🔗](#2-property) Property	| [🔗](#3-enum) Enum			|
-| [🔗](#1-acronyms) Acronyms                | [🔗](#2-method) Method	| [🔗](#3-file) File			|
+| [🔗](#1-acronyms) Acronyms                | [🔗](#2-method) Method	    | [🔗](#3-file) File			|
 | [🔗](#1-namespace) Namespace              | [🔗](#2-condition) Condition	| [🔗](#3-namespace) Namespace		|
-| [🔗](#1-class) Class                      | [🔗](#2-switch) Switch	| [🔗](#3-declaration) Declaration	|
-| [🔗](#1-struct) Struct                    |				| [🔗](#3-comment) Comment		|
-| [🔗](#1-interface) Interface              |				| [🔗](#3-definition) Definition	|
-| [🔗](#1-enum) Enum                        |				| [🔗](#3-event) Event			|
-| [🔗](#1-field) Field                      |				| [🔗](#3-string) String		|
-| [🔗](#1-property) Property                |				| [🔗](#3-linq) Linq			|
-| [🔗](#1-method) Method                    |				| [🔗](#3-property) Property		|
-| [🔗](#1-local-variable) Local variable    |				| [🔗](#3-switch) Switch		|
-| [🔗](#1-parameters) Parameters            |				|					|
-| [🔗](#1-event) Event                      |				|					|
+| [🔗](#1-class) Class                      | [🔗](#2-switch) Switch	    | [🔗](#3-declaration) Declaration	|
+| [🔗](#1-struct) Struct                    |				                | [🔗](#3-comment) Comment		|
+| [🔗](#1-interface) Interface              |				                | [🔗](#3-definition) Definition	|
+| [🔗](#1-enum) Enum                        |				                | [🔗](#3-event) Event			|
+| [🔗](#1-field) Field                      |				                | [🔗](#3-string) String		|
+| [🔗](#1-property) Property                |				                | [🔗](#3-linq) Linq			|
+| [🔗](#1-method) Method                    |				                | [🔗](#3-property) Property		|
+| [🔗](#1-local-variable) Local variable    |				                | [🔗](#3-switch) Switch		|
+| [🔗](#1-parameters) Parameters            |				                |					|
+| [🔗](#1-event) Event                      |				                |					|
 
 # Naming
 
@@ -549,6 +549,21 @@ public enum Side
 
 Only on anonymous methods, never on member declaration
 
+```csharp
+// Allowed
+{
+    collection.ForEach (x => x.Jump());
+}
+```
+
+```csharp
+// Not Allowed
+protected int firstNumber
+{
+    get => 1
+}
+```
+
 ---
 
 ## 3. File
@@ -571,14 +586,14 @@ Only on anonymous methods, never on member declaration
 ✔️ **Always** match the source file’s name with the `MonoBehaviour` declared inside of it.  
 ✔️ **Always** declare only one structure per file.  
 ❌ **Never** declare an `enum`, `struct` or `class` inside another class, unless not public.  
-  •  favor declaring `class` instead of `struct`.  
+  •  Favor declaring `class` instead of `struct`.  
 ✔️ **Always** declare fields at the top of the class.  
-  •  avoid using public fields.
+  •  Avoid using public fields.
 
 ## 3. Comment
 
 ✔️ **Always** use `///` to produce comments in classes and its members. It should automatically create a `<summary>` tag or `<parameter>` and `<return>`, if necessary.  
-  •  favor using the `[ToolTip]` attribute, as it will create both editor and XML comment.
+  •  Favor using the `[ToolTip]` attribute, as it will create both editor and XML comment.
 
 ```csharp
 /// <summary>
@@ -592,13 +607,12 @@ public class Scenario
 }
 ```
 
----
-
 ## 3. Definition
 
-- Never use `new()`, if the type is not explicit on the left-hand side.
+❌ **Never** use `new()`, if the type is not explicit on the left-hand side.
 
 ```csharp
+// Allowed
 private List<int> manyNumbers = new();
 
 {
@@ -608,57 +622,47 @@ private List<int> manyNumbers = new();
 ```
 
 ```csharp
+// Not Allowed
 {
     List<int> localNumbers = null;
     localNumbers = new();
 }
 ```
 
----
-
 ## 3. Event
 
-- favor using `event` for callbacks.
-    - except when exposing to the editor, then use `UnityEvent`.
-- favor using `System.Action`.
-
----
+  •  Favor using `event` for callbacks.  
+        except when exposing to the editor, then use `UnityEvent`.  
+  •  favor using `System.Action`.
 
 ## 3. String
 
-- string interpolation = $””
-- favor using the `+` operator, to increase readibility.
+  •  Favor using `$””` symbol, when formatting or concatenating strings  
+  •  Favor using the `+` operator, to increase readibility.
 
 ```csharp
-public string introText = "" + + + + 
+public string introText = "A really long text that can be brake into pieces, " +
+                            "allowing better readability";
 
 private string listText = $"{someList.Name} has {someList.Count} children.";
 
-$"{3.25f:F3}"
+Debug.Log ($"{3.25f:F3});"
 ```
-
-```csharp
-public string introText = ""
-```
-
----
 
 ## 3. LINQ
 
-- favor using it when handling collections.
+  •  favor using it when handling collections.  
 ✔️ **Always** use only one type: keywords or methods
 
 ```csharp
 as select
 ```
 
----
-
 ## 3. Property
 
-- avoid auto-Implemented properties, because Unity editor can’t display the anonymous field.
-    - Instead, explicitly declare the field for the property.
-- Favor using it, instead of methods, when dealing with a single field and few calculations.
+  •  Avoid auto-Implemented properties, because Unity editor can’t display the anonymous field.  
+    Instead, explicitly declare the field for the property.  
+  •  Favor using it, instead of methods, when dealing with a single field and few calculations.
 
 ```csharp
 public bool IsBoolean
@@ -671,17 +675,13 @@ public bool IsBoolean
 private bool isBoolean;
 ```
 
----
-
 ```csharp
 public bool IsBoolean { get; set; }
 ```
 
----
-
 ## 3. Switch
 
-✔️ **Always** implement default, to handle unknown cases.
+✔️ **Always** implement default, to handle unknown cases.  
 ✔️ **Always** leave an explicit comment, when falling through.
 
 ```csharp
@@ -700,49 +700,32 @@ switch (otherCondition)
 }
 ```
 
----
-
 ```csharp
 // TODO
 
 // Markdown
 // Implement the 'top' button in each header, that will bring the view to the index header
 
+// C#
 // Using classes to nest variables or to simply enjoy of the editor folding option
 // UnityEvent + C# event
 // ? operator when calling methods from objects
-
-// Nesting parameters to the same identation of the first one, increase readibility
-
+// Nesting parameters to the same identation of the first one, increasing readibility
 // Properties vs methods of Get and Set
-
 // foreach (var item in List)
-
-// Line breaks should occur before binary operators, if necessary.
-
-// avoid unnecessary comments inside of code blocks
-
-// naming of coroutines 
-// (how to deal with coroutines being stopped when the GO is disabled)
-
-// always use a brace alone in each line, when the lambda have more than one expression
-
-// if lambda is referenced outside its declaration, create a method for it
-
-// Field initializers are generally encouraged.
-
-// Avoid Container.ForEach(...) for anything longer than a single statement.
-
-// Prefer List<> when the size of the container can change.
-// Prefer arrays when the size of the container is fixed and known at construction time.
-// Prefer array for multidimensional arrays.
-
+// Line breaks should occur before binary operators, if necessary
+// Avoid unnecessary comments inside of code blocks
+// Naming of coroutines
+// How to deal with coroutines being stopped when the GO is disabled
+// If lambda is referenced outside its declaration, create a method for it
+// Field initializers are generally encouraged
+// Avoid Container.ForEach(...) for anything longer than a single statement
+// Prefer List<> when the size of the collection can change
+// Prefer arrays when the size of the collection is fixed and known at construction time
+// Prefer array for multidimensional collections
 // have .editorConfig for this whole style
-// have an editor theme style
-
+// Get the custom Monokai style to follow this file
 // C# keywords (using, try, as,...)
 ```
 
-
 <small><a href="#wrapper">[top]</a></small>
-<!-- End of Sample Content -->
