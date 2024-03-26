@@ -674,10 +674,11 @@ Debug.Log ($"{3.25f:F3});"
   •  Favor using it, instead of methods, when dealing with a single field and few calculations.
 
 ```csharp
+// Allowed
 public bool IsBoolean
 {
-    get => isBoolean;
-    set => isBoolean = value;
+    get {return isBoolean;}
+    set {isBoolean = value;}
 }
 
 [SerializeField]
@@ -685,6 +686,7 @@ private bool isBoolean;
 ```
 
 ```csharp
+// Not Allowed
 public bool IsBoolean { get; set; }
 ```
 
