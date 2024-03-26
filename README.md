@@ -548,7 +548,7 @@ public enum Side
 
 ## 3. Lambda expression
 
-❌ **Never** on member declaration.
+❌ **Never** on member declaration.  
   •  Allowed on anonymous methods.
 
 ```csharp
@@ -592,7 +592,7 @@ protected int firstNumber
 
 ## 3. Comment
 
-✔️ **Always** use `///` to produce comments in types and its members. The IDE should automatically handle the tags.
+✔️ **Always** use `///` to produce comments in types and its members. The IDE should automatically handle the tags.  
   •  Favor using the `[ToolTip]` attribute, as it will create both editor and the XML tags.
 
 ```csharp
@@ -631,8 +631,8 @@ private List<int> manyNumbers = new();
 
 ## 3. Event
 
-✔️ **Always** use `event` for callbacks.
-        •  If exposing to the editor, declare a private `UnityEvent` to follow it.
+✔️ **Always** use `event` for callbacks.  
+        •  If exposing to the editor, declare a private `UnityEvent` to follow it.  
   •  Favor using `System.Action`.
 
 ```csharp
