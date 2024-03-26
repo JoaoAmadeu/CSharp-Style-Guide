@@ -146,7 +146,7 @@ public struct Coin
 ## 1. Interface
 
 ✔️ **Always** the name should be an adjective, ending with `-able` or `-ible`, whenever the interface provides a capability.  
-          •  Except if the rule above is not possible, then it should be a noun.  
+        •  Except if the rule above is not possible, then it should be a noun.  
 ✔️ **Always** precede with a capital i `I`.  
 ✔️ **Always** use `PascalCase`.
 
@@ -189,7 +189,7 @@ public enum Colors
 ## 1. Field
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
-         Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
+        •  Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
 ✔️ **Always** use `camelCase`.
 
 ```csharp
@@ -201,7 +201,7 @@ private bool hasBullets;
 ## 1. Property
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
-         Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
+        •  Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
 ✔️ **Always** use `PascalCase`.
 
 ```csharp
@@ -236,7 +236,7 @@ protected int GetNumber ()
 ## 1. Local variable
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
-         Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
+        •  Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
 ✔️ **Always** use `camelCase`.
 
 ```csharp
@@ -249,7 +249,7 @@ protected int GetNumber ()
 ## 1. Parameters
 
 ✔️ **Always** the name should be a noun, representing a thing or state.  
-         Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
+        •  Except if it’s a `boolean` type, then it should be prefixed with a verb, followed by a condition.  
 ✔️ **Always** use `camelCase`.  
 ✔️ **Always** a single letter, when inside a `for`.  
   •  Avoid using single letters on anonymous methods, when it have more than one parameter.
@@ -277,8 +277,8 @@ RegisterEvent ((x,y) => speed = x.heigth * y);
 ## 1. Event
 
 ✔️ **Always** the name should be prefixed with `on`.  
-         if invoked after its represented action, follow with a verb on simple past.  
-         if invoked before or during its represented action, follow with a verb on present.  
+        •  If invoked after its represented action, follow with a verb on simple past.  
+        •  If invoked before or during its represented action, follow with a verb on present.  
 ✔️ **Always** use `PascalCase`.  
 ✔️ **Always** apply this same rules to `UnityEvent`;
 
@@ -470,7 +470,7 @@ switch (condition) {
 ## 3. Var
 
 ❌ **Never** use it, if it makes the type ambiguous.  
-  •  favor using `var` at all times.
+  •  Favor using `var` at all times.
 
 ```csharp
 // Allowed
@@ -632,7 +632,7 @@ private List<int> manyNumbers = new();
 ## 3. Event
 
   •  Favor using `event` for callbacks.  
-        except when exposing to the editor, then use `UnityEvent`.  
+        •  except when exposing to the editor, then use `UnityEvent`.  
   •  favor using `System.Action`.
 
 ## 3. String
@@ -661,7 +661,7 @@ as select
 ## 3. Property
 
   •  Avoid auto-Implemented properties, because Unity editor can’t display the anonymous field.  
-    Instead, explicitly declare the field for the property.  
+        •  Instead, explicitly declare the field for the property.  
   •  Favor using it, instead of methods, when dealing with a single field and few calculations.
 
 ```csharp
