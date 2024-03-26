@@ -10,22 +10,22 @@ This coding style is based on the following guidelines:
 
 # Index
 
-| [Naming](#Naming)                          | [Braces](#Braces)		    | [Practices](#Practices)		|
-| :---                                       | :---				            | :---					|
+| [Naming](#Naming)                          | [Braces](#Braces)		    | [Practices](#Practices)		    |
+| :---                                       | :---				            | :---					            |
 | [🔗](#1-general) General                  | [🔗](#2-general) General	    | [🔗](#3-parameters) Parameters	|
-| [🔗](#1-symbols) Symbols                  | [🔗](#2-property) Property	| [🔗](#3-enum) Enum			|
-| [🔗](#1-acronyms) Acronyms                | [🔗](#2-method) Method	    | [🔗](#3-file) File			|
+| [🔗](#1-symbols) Symbols                  | [🔗](#2-property) Property	| [🔗](#3-enum) Enum			    |
+| [🔗](#1-acronyms) Acronyms                | [🔗](#2-method) Method	    | [🔗](#3-file) File			    |
 | [🔗](#1-namespace) Namespace              | [🔗](#2-condition) Condition	| [🔗](#3-namespace) Namespace		|
 | [🔗](#1-class) Class                      | [🔗](#2-switch) Switch	    | [🔗](#3-declaration) Declaration	|
-| [🔗](#1-struct) Struct                    |				                | [🔗](#3-comment) Comment		|
+| [🔗](#1-struct) Struct                    |				                | [🔗](#3-comment) Comment		    |
 | [🔗](#1-interface) Interface              |				                | [🔗](#3-definition) Definition	|
-| [🔗](#1-enum) Enum                        |				                | [🔗](#3-event) Event			|
-| [🔗](#1-field) Field                      |				                | [🔗](#3-string) String		|
-| [🔗](#1-property) Property                |				                | [🔗](#3-linq) Linq			|
+| [🔗](#1-enum) Enum                        |				                | [🔗](#3-event) Event			    |
+| [🔗](#1-field) Field                      |				                | [🔗](#3-string) String		    |
+| [🔗](#1-property) Property                |				                | [🔗](#3-linq) Linq			    |
 | [🔗](#1-method) Method                    |				                | [🔗](#3-property) Property		|
-| [🔗](#1-local-variable) Local variable    |				                | [🔗](#3-switch) Switch		|
-| [🔗](#1-parameters) Parameters            |				                |					|
-| [🔗](#1-event) Event                      |				                |					|
+| [🔗](#1-local-variable) Local variable    |				                | [🔗](#3-switch) Switch		    |
+| [🔗](#1-parameters) Parameters            |				                |					                |
+| [🔗](#1-event) Event                      |				                |					                |
 
 # Naming
 
