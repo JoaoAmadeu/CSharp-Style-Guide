@@ -146,7 +146,7 @@ public struct Coin
 ## 1. Interface
 
 ✔️ **Always** the name should be an adjective, ending with `-able` or `-ible`, whenever the interface provides a capability.  
-      •  Except if the rule above is not possible, then it should be a noun.  
+      •  Except if the rule above is not possible, then it should be a noun.  
 ✔️ **Always** precede with a capital i `I`.  
 ✔️ **Always** use `PascalCase`.
 
